@@ -211,13 +211,21 @@ body{font-family:'Onest',sans-serif}
 .site-header:before,.site-header:after{width:68%;opacity:.12}
 }
 
+
+/* Contact details */
+.header-phone{font-family:'Onest',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;text-decoration:none;color:var(--olive);white-space:nowrap}
+.header-phone:hover{color:var(--gold)}
+.visit-info h3 a{white-space:nowrap}
+@media(max-width:900px){.header-right{gap:14px}.header-phone{font-size:10px}}
+@media(max-width:620px){.header-right{gap:0}.header-phone{font-size:10px;margin-right:12px}.address-mini{display:none}}
+
 </style>
 </head>
 <body>
 <header class="site-header">
 <a class="brand" href="#top" aria-label="ГОРЫ"><img src="assets/gory-logo.svg" alt="ГОРЫ — кофейня"></a>
 <nav class="nav" aria-label="Главная навигация"><a href="#menu">Меню</a><a href="#coffee">Кофе</a><a href="#about">О нас</a><a href="#contacts">Контакты</a></nav>
-<div class="header-right"><span class="address-mini">Белгород · Гражданский пр-т, 5</span><a class="social-link" href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+<div class="header-right"><span class="address-mini">Белгород · Гражданский пр-т, 5</span><a class="header-phone" href="tel:+79803842800">+7 (980) 384-28-00</a><a class="social-link" href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
 </header>
 <main id="top">
 <div class="cinematic-opening">
@@ -254,8 +262,8 @@ body{font-family:'Onest',sans-serif}
 <div class="about-copy fade-up">«ГОРЫ» — гастрокофе для тех, кто ценит хороший кофе и еду, приготовленную с вниманием. Мы любим понятные продукты, выразительные вкусы и атмосферу, в которой комфортно встречаться, отдыхать и брать любимое с собой.<div class="about-sign">До встречи в Горах.</div></div>
 </section>
 <section class="section visit-section" id="contacts">
-<div class="fade-up"><p class="section-label">Заглядывайте в гости</p><h2 class="section-title">Увидимся<br>в <em>ГОРАХ.</em></h2><p class="visit-copy">Кофе, еда и немного времени для себя. Будем рады видеть вас!</p><a class="button" href="https://yandex.ru/maps/?text=Белгород%2C%20Гражданский%20проспект%2C%205" target="_blank" rel="noreferrer">Построить маршрут ↗</a></div>
-<div class="visit-info fade-up"><small>Наш адрес</small><h3>Белгород,<br>Гражданский пр-т, 5</h3><small>Мы в Instagram</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">@go_gory_bgd ↗</a></h3></div>
+<div class="fade-up"><p class="section-label">Заглядывайте в гости</p><h2 class="section-title">Увидимся<br>в <em>ГОРАХ.</em></h2><p class="visit-copy">Кофе, еда и немного времени для себя. Будем рады видеть вас!</p><a class="button" href="https://yandex.ru/maps/org/gory" target="_blank" rel="noreferrer">Открыть в Яндекс Картах ↗</a></div>
+<div class="visit-info fade-up"><small>Наш адрес</small><h3>Белгород,<br>Гражданский пр-т, 5</h3><small>Телефон</small><h3><a href="tel:+79803842800">+7 (980) 384-28-00</a></h3><small>Мы в Instagram</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">@go_gory_bgd ↗</a></h3></div>
 </section>
 </main>
 <footer class="footer"><img class="footer-brand" src="assets/gory-logo.svg" alt="ГОРЫ"><span>Кофе с характером. Еда с настроением.</span><a href="#top">Наверх ↑</a><small>© ГОРЫ · 2026</small></footer>
