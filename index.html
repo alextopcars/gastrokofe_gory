@@ -124,6 +124,45 @@ img{display:block;max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){.video-progress:after{animation:none}}
 
+
+/* Full-screen cinematic opening: video covers the entire first viewport */
+html,body{min-height:100%;margin:0}
+.site-header{position:absolute;top:0;left:0;right:0;width:100%;height:88px;background:rgba(244,241,233,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.25)}
+.hero{position:relative;display:block;width:100%;height:100svh;min-height:640px;max-height:none;overflow:hidden;background:#191610;color:#fff}
+.hero-visual.hero-video-wrap{position:absolute;inset:0;width:100%;height:100%;min-height:0;background:#191610;z-index:0}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
+.video-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,20,15,.76) 0%,rgba(15,20,15,.48) 42%,rgba(15,20,15,.08) 100%),linear-gradient(0deg,rgba(10,12,10,.32),transparent 42%)}
+.hero-copy{position:absolute;z-index:2;inset:0 auto 0 0;width:min(720px,58%);padding:clamp(125px,17vh,190px) 4vw 100px 9%;display:flex;flex-direction:column;justify-content:center;background:transparent;color:#fff}
+.hero h1{color:#fff;font-size:clamp(90px,12vw,170px);margin:26px 0 22px}
+.hero h1 span,.hero-lead em{color:#d4b17c}
+.hero-lead{color:#fff;font-size:clamp(26px,3vw,42px)}
+.hero-description{color:rgba(255,255,255,.86);font-size:13px;max-width:420px}
+.hero .eyebrow{color:#e0bd88}
+.hero .button{background:#c5a477;color:#1e2c22}
+.hero .button:hover{background:#e0c69e}
+.hero .quiet-link{color:#fff}
+.hero-caption{right:5%;bottom:7%;text-shadow:0 2px 14px #000}
+.scroll-cue{z-index:3;left:9%;bottom:28px;color:#fff}
+.intro-strip{position:relative}
+@media(max-width:900px){
+.site-header{height:76px}
+.hero{height:100svh;min-height:600px}
+.hero-copy{width:70%;padding:125px 5% 90px 8%}
+.hero h1{font-size:clamp(88px,13vw,145px)}
+}
+@media(max-width:620px){
+.site-header{height:70px;background:rgba(244,241,233,.94)}
+.hero{height:100svh;min-height:680px;max-height:none;display:block}
+.hero-copy{width:100%;inset:0;padding:105px 7% 105px;justify-content:center}
+.hero h1{font-size:clamp(82px,22vw,118px);margin:24px 0 18px}
+.hero-lead{font-size:27px}
+.hero-description{font-size:11px;max-width:330px}
+.hero-visual.hero-video-wrap{height:100%;min-height:0;aspect-ratio:auto;max-height:none}
+.hero-video{object-position:center center}
+.hero-caption{right:7%;bottom:7%;font-size:8px}
+.scroll-cue{left:7%;bottom:24px}
+}
+
 </style>
 </head>
 <body>
