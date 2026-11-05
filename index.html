@@ -184,36 +184,21 @@ html,body{min-height:100%;margin:0}
 }
 
 
-/* Modern typography and mountain-inspired header */
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap');
-body{font-family:'Onest',sans-serif}
-.hero h1,.hero-lead,.section-title,.menu-card-copy h3,.coffee-copy h2,.visit-info h3{font-family:'Onest',sans-serif;font-weight:700;letter-spacing:-.055em}
-.hero h1{font-weight:800;letter-spacing:-.075em}
-.hero-lead{font-weight:600;letter-spacing:-.035em}
-.section-title{font-weight:700;line-height:1.02}
-.menu-card-copy h3{font-weight:700;letter-spacing:-.04em}
-.coffee-copy h2{font-weight:800;letter-spacing:-.065em}
-.visit-info h3{font-weight:650;letter-spacing:-.035em}
-.site-header{isolation:isolate;overflow:hidden;background:rgba(247,245,238,.94);border-bottom:1px solid rgba(38,59,45,.12)}
-.site-header:before,.site-header:after{content:"";position:absolute;z-index:0;pointer-events:none;right:0;top:0;height:100%;width:58%;opacity:.15}
-.site-header:before{background:#263b2d;clip-path:polygon(0 100%,13% 60%,22% 76%,38% 25%,52% 67%,64% 43%,80% 82%,91% 55%,100% 76%,100% 100%)}
-.site-header:after{background:#ad8756;clip-path:polygon(18% 100%,37% 48%,49% 76%,65% 30%,79% 72%,91% 49%,100% 72%,100% 100%);opacity:.16}
-.site-header>*{position:relative;z-index:1}
-.brand{width:132px;flex:0 0 auto}
+/* Clean editorial typography and a quiet header */
+body{font-family:'Manrope',sans-serif}
+.hero h1,.hero-lead,.section-title,.menu-card-copy h3,.coffee-copy h2,.visit-info h3{font-family:'Playfair Display',Georgia,serif}
+.site-header{background:var(--paper);border-bottom:1px solid #e9e5da}
+.site-header:before,.site-header:after{content:none}
+.brand{width:112px;flex:0 0 auto}
 .brand img{width:100%;max-height:62px;object-fit:contain}
-.nav a,.address-mini,.social-link{font-family:'Onest',sans-serif}
-.nav a{font-size:11px;letter-spacing:.09em}
+.nav a,.address-mini,.social-link,.header-phone{font-family:'Manrope',sans-serif}
+.nav a{font-size:10px;letter-spacing:.13em}
 .social-link{font-size:10px}
-@media(max-width:900px){.brand{width:118px}}
-@media(max-width:620px){
-.site-header{height:72px}
-.brand{width:108px}
-.site-header:before,.site-header:after{width:68%;opacity:.12}
-}
-
+@media(max-width:900px){.brand{width:112px}}
+@media(max-width:620px){.brand{width:104px}}
 
 /* Contact details */
-.header-phone{font-family:'Onest',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;text-decoration:none;color:var(--olive);white-space:nowrap}
+.header-phone{font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;text-decoration:none;color:var(--olive);white-space:nowrap}
 .header-phone:hover{color:var(--gold)}
 .visit-info h3 a{white-space:nowrap}
 @media(max-width:900px){.header-right{gap:14px}.header-phone{font-size:10px}}
