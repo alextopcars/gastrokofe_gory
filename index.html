@@ -1,118 +1,298 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4f0e7">
-<meta name="description" content="ГОРЫ — гастрокофе в Белгороде. Спешелти-кофе, шаурма, кебаб, сэндвичи, завтраки и десерты.">
-<title>ГОРЫ — гастрокофе · Белгород</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-<style>
-:root{--milk:#f4f0e7;--paper:#fbf9f3;--forest:#20382c;--forest2:#344c3b;--sand:#c8a77b;--ink:#222c25;--muted:#777b70;--line:#dcd5c7;--serif:"Playfair Display",Georgia,serif;--sans:"Manrope",Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--milk);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}
-.topbar{height:82px;padding:0 6.5%;display:flex;align-items:center;justify-content:space-between;position:absolute;inset:0 0 auto;z-index:20;color:var(--forest);border-bottom:1px solid rgba(32,56,44,.12);background:rgba(244,240,231,.86);backdrop-filter:blur(16px)}
-.wordmark{display:flex;align-items:center;gap:12px;text-decoration:none}.wordmark-symbol{width:36px;height:36px;border:1px solid var(--sand);border-radius:50%;display:grid;place-items:center;color:var(--forest);font:italic 22px var(--serif)}.wordmark-main{font:700 24px/.9 var(--serif);letter-spacing:.12em}.wordmark-sub{font-size:7px;letter-spacing:.24em;text-transform:uppercase;margin-top:5px;color:#77796e}
-.nav{display:flex;align-items:center;gap:34px}.nav a,.top-contact{font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}.nav a{color:#596457;transition:color .2s}.nav a:hover{color:#a47d4d}.top-contact{border-bottom:1px solid var(--sand);padding:0 0 7px}
-.hero{min-height:760px;height:100svh;max-height:980px;padding-top:82px;display:grid;grid-template-columns:1fr 1fr;background:var(--milk);overflow:hidden}
-.hero-copy{padding:clamp(70px,9vw,130px) 8% 70px 13.5%;display:flex;flex-direction:column;justify-content:center;position:relative}
-.kicker{display:flex;align-items:center;gap:13px;font-size:9px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#9b7950}.kicker:before{content:"";width:31px;height:1px;background:currentColor}
-.hero h1{font:500 clamp(76px,10vw,148px)/.83 var(--serif);letter-spacing:-.075em;color:var(--forest);margin:35px 0 26px}.hero h1 span{color:var(--sand)}
-.hero-tagline{font:500 clamp(26px,3vw,42px)/1.15 var(--serif);color:var(--forest);letter-spacing:-.025em}.hero-tagline em{color:#a78358}
-.hero-description{max-width:390px;font-size:12px;line-height:2;color:#72776d;margin:25px 0 33px}
-.actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.btn{min-height:52px;padding:0 22px;background:var(--forest);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:27px;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;transition:background .25s,transform .25s}.btn:hover{background:#3a5943;transform:translateY(-2px)}.underlink{font-size:9px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--sand);padding-bottom:7px;color:var(--forest)}
-.hero-foot{position:absolute;left:13.5%;bottom:36px;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#969487}
-.hero-media{position:relative;background:#17241c;min-width:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-media:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#33483a 0%,#17241c 70%);opacity:.7}
-.hero-video{position:relative;z-index:1;height:100%;width:100%;object-fit:contain;object-position:center;background:#17241c}
-.media-caption{position:absolute;z-index:2;right:7%;bottom:7%;color:#f5f0e6;text-align:right;font-size:8px;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 2px 15px #000}.media-caption span{display:block;color:#d4b184;margin-top:8px}
-.media-index{position:absolute;z-index:2;left:7%;top:9%;color:#fff9;font:italic 20px var(--serif)}
-.trustline{min-height:92px;padding:24px 7%;display:flex;align-items:center;justify-content:center;gap:clamp(16px,4vw,62px);flex-wrap:wrap;background:#e9e3d7}.trustline span{font-size:8px;letter-spacing:.19em;text-transform:uppercase;color:#536052;font-weight:800}.trustline b{font-size:16px;font-weight:400;color:#b38d5d}
-.section{padding:clamp(78px,9vw,130px) 9%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:48px}.label{font-size:9px;letter-spacing:.23em;text-transform:uppercase;font-weight:800;color:#a17c4e;margin:0}.heading{font:500 clamp(48px,6vw,82px)/.98 var(--serif);letter-spacing:-.055em;color:var(--forest);margin:17px 0 0}.heading em{font-style:italic;color:#a78358}.intro{max-width:330px;font-size:11px;line-height:2;color:#7c7d72;margin:0 0 4px}
-.menu{background:var(--paper)}
-.menu-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
-.menu-large{position:relative;min-height:620px;overflow:hidden;background:#b9a88e}.menu-side{display:grid;grid-template-rows:1fr 1fr;gap:16px;min-height:620px}
-.food-card{position:relative;min-height:290px;overflow:hidden;background:#b9a88e;isolation:isolate}.food-card img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}.food-card:hover img{transform:scale(1.045)}.food-card:after{content:"";position:absolute;z-index:1;inset:30% 0 0;background:linear-gradient(0deg,rgba(15,28,20,.78),transparent)}
-.food-card-copy{position:absolute;z-index:2;left:30px;bottom:27px;color:#fff}.food-card-copy small{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:#e2c49a}.food-card-copy h3{font:500 clamp(28px,3.4vw,48px)/1.05 var(--serif);margin:10px 0 0}.food-card-copy p{font-size:10px;color:#eee9df;margin:9px 0 0}
-.menu-large .food-card-copy{left:38px;bottom:38px}.menu-large .food-card-copy h3{font-size:clamp(42px,5vw,70px)}
-.menu-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.menu-bottom .food-card{min-height:260px}
-.coffee-story{min-height:660px;display:grid;grid-template-columns:1fr 1fr;background:#e9e3d7}
-.coffee-visual{position:relative;min-height:660px;overflow:hidden;background:#1e2d23;isolation:isolate}
-.coffee-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;mix-blend-mode:screen}
-.coffee-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,27,20,.5),rgba(16,27,20,.05))}
-.bean{position:absolute;z-index:2;width:25px;height:36px;border-radius:50% 50% 45% 45%;background:linear-gradient(120deg,#c89c66,#6f4428 75%);box-shadow:inset -4px -3px 5px #28190f88;animation:beanFall 7s linear infinite}
-.bean:after{content:"";position:absolute;width:2px;height:27px;left:50%;top:4px;background:#38251a;transform:rotate(12deg);border-radius:50%}
-.bean.b1{left:18%;top:-45px;animation-delay:-1s}.bean.b2{left:42%;top:-50px;animation-delay:-4s;transform:scale(.7)}.bean.b3{left:70%;top:-50px;animation-delay:-2.5s;transform:scale(1.15)}.bean.b4{left:84%;top:-50px;animation-delay:-5.2s;transform:scale(.8)}
-@keyframes beanFall{0%{translate:0 -20px;rotate:0deg;opacity:0}12%{opacity:.9}85%{opacity:.85}100%{translate:45px 720px;rotate:260deg;opacity:0}}
-.coffee-visual-caption{position:absolute;z-index:3;left:8%;bottom:8%;color:#fff;font:italic 24px var(--serif)}
-.coffee-copy{padding:clamp(65px,9vw,125px) 12%;display:flex;flex-direction:column;justify-content:center}.coffee-copy .heading{font-size:clamp(55px,6.5vw,88px)}.coffee-copy p:not(.label){max-width:410px;font-size:12px;line-height:2.05;color:#6d756b;margin:24px 0 30px}.coffee-sign{padding-top:17px;border-top:1px solid #c9c0b1;width:max-content;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--forest)}
-.about{background:var(--forest);color:#f5f0e6;display:grid;grid-template-columns:.85fr 1.15fr;gap:12%;align-items:center}.about .heading{color:#f5f0e6}.about .heading em{color:#d4b184}.about-copy{font-size:12px;line-height:2.1;color:#d5ddd4;max-width:580px}.about-sign{font:italic 27px var(--serif);color:#d4b184;margin-top:28px}
-.visit{display:grid;grid-template-columns:1fr .8fr;gap:12%;align-items:center;background:var(--milk)}.visit .heading{font-size:clamp(60px,7vw,94px)}.visit-copy{font-size:12px;line-height:2;color:#7b7c72;max-width:380px;margin:22px 0 30px}.visit-details{border-left:1px solid #c9b99f;padding:12px 0 12px 34px}.visit-details small{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a17c4e;font-weight:800}.visit-details h3{font:500 27px/1.3 var(--serif);color:var(--forest);margin:11px 0 28px}.visit-details a{text-decoration:none;border-bottom:1px solid #c5a477;padding-bottom:3px}
-.footer{background:#17271e;color:#e9e5db;padding:30px 7%;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font:700 24px var(--serif);letter-spacing:.16em}.footer small,.footer span{font-size:9px;color:#c7d0c5}.footer a{font-size:9px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:#d3b184}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}
-@media(max-width:900px){.topbar{padding:0 5%}.nav{gap:19px}.hero-copy{padding-left:9%;padding-right:6%}.hero-foot{left:9%}.menu-large{min-height:530px}.menu-side{min-height:530px}.section{padding-left:7%;padding-right:7%}.coffee-copy{padding-left:9%;padding-right:9%}}
-@media(max-width:650px){
-html{scroll-padding-top:70px}.topbar{height:70px;padding:0 6%}.wordmark-symbol{width:31px;height:31px}.wordmark-main{font-size:21px}.nav{display:none}.top-contact{font-size:8px}
-.hero{height:auto;min-height:0;max-height:none;padding-top:70px;display:flex;flex-direction:column}.hero-copy{min-height:570px;padding:70px 7% 75px}.hero h1{font-size:clamp(90px,24vw,132px);margin:28px 0 22px}.hero-tagline{font-size:30px}.hero-description{font-size:11px;margin:20px 0 27px;max-width:330px}.hero-foot{left:7%;bottom:24px}.hero-media{height:auto;min-height:0;aspect-ratio:9/16;max-height:760px}.hero-video{width:100%;height:100%;object-fit:contain}.media-caption{right:7%;bottom:6%;font-size:7px}.trustline{gap:13px 17px;padding:19px 5%}.trustline span{font-size:7px;letter-spacing:.12em}.trustline b{font-size:12px}
-.section{padding:76px 6%}.section-head{display:block;margin-bottom:29px}.heading{font-size:54px}.intro{margin-top:17px}
-.menu-layout{grid-template-columns:1fr;gap:10px}.menu-large{min-height:480px}.menu-side{min-height:0;grid-template-columns:1fr 1fr;grid-template-rows:220px;gap:10px}.food-card{min-height:220px}.food-card-copy{left:15px;bottom:15px}.food-card-copy h3{font-size:27px}.food-card-copy p{font-size:8px}.menu-large .food-card-copy{left:22px;bottom:22px}.menu-large .food-card-copy h3{font-size:44px}.menu-bottom{grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.menu-bottom .food-card{min-height:210px}.menu-bottom .food-card:last-child{grid-column:span 2;min-height:230px}
-.coffee-story{grid-template-columns:1fr}.coffee-visual{min-height:440px;height:440px}.coffee-copy{padding:65px 7% 72px}.coffee-copy .heading{font-size:62px}.about{grid-template-columns:1fr;gap:27px}.about-copy{font-size:11px}.visit{grid-template-columns:1fr;gap:30px}.visit-details{border-left:0;border-top:1px solid #c9b99f;padding:25px 0 0}.footer{padding:25px 6%;flex-wrap:wrap}.footer span{width:calc(100% - 115px)}.footer small{width:100%}
-}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Гастрокофе ГОРЫ в Белгороде: зерновой кофе, шаурма, кебаб, сэндвичи, завтраки и десерты.">
+  <meta property="og:title" content="ГОРЫ — гастрокофе · Белгород">
+  <meta property="og:description" content="Выше суеты. Ближе к вкусу. Кофе, кухня и впечатления в гастрокофе ГОРЫ.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>ГОРЫ — гастрокофе · Белгород</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --milk: #f4f0e7;
+      --paper: #fbf9f3;
+      --forest: #20382c;
+      --forest-deep: #16271e;
+      --sand: #c8a77b;
+      --ink: #222c25;
+      --muted: #777b70;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Manrope", "DM Sans", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body { margin: 0; color: var(--ink); background: var(--milk); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    img, video { display: block; max-width: 100%; }
+    .topbar {
+      height: 86px; position: absolute; inset: 0 0 auto; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6.5%; color: var(--forest);
+      border-bottom: 1px solid rgba(32,56,44,.12);
+      background: rgba(244,240,231,.88); backdrop-filter: blur(16px);
+    }
+    .brand-link { display: inline-flex; align-items: center; }
+    .brand-logo { width: 76px; height: 76px; object-fit: contain; mix-blend-mode: multiply; }
+    .nav { display: flex; align-items: center; gap: 38px; }
+    .nav a, .top-contact {
+      text-decoration: none; font-size: 9px; font-weight: 800;
+      letter-spacing: .17em; text-transform: uppercase;
+    }
+    .nav a { color: #596457; transition: color .2s; }
+    .nav a:hover { color: #a47d4d; }
+    .top-contact { border-bottom: 1px solid var(--sand); padding: 0 0 7px; }
+    .hero {
+      min-height: min(900px, 100svh); padding-top: 86px;
+      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+      background: var(--milk);
+    }
+    .hero-copy {
+      padding: clamp(76px, 10vw, 140px) 8% 70px 13.5%;
+      display: flex; flex-direction: column; justify-content: center; position: relative;
+    }
+    .kicker, .label {
+      display: flex; align-items: center; gap: 13px;
+      color: #9b7950; font-size: 9px; font-weight: 800;
+      letter-spacing: .24em; text-transform: uppercase;
+    }
+    .kicker:before { content: ""; width: 31px; height: 1px; background: currentColor; }
+    h1 {
+      margin: 35px 0 25px; color: var(--forest);
+      font: 500 clamp(82px, 10vw, 150px)/.83 var(--serif);
+      letter-spacing: -.075em;
+    }
+    h1 span { color: var(--sand); }
+    .tagline { color: var(--forest); font: 500 clamp(26px, 3vw, 42px)/1.15 var(--serif); letter-spacing: -.025em; }
+    .tagline em { color: #a78358; }
+    .hero-description, .section-copy {
+      max-width: 410px; margin: 24px 0 32px; color: #72776d;
+      font-size: 12px; line-height: 2;
+    }
+    .actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
+    .btn {
+      min-height: 52px; padding: 0 23px; background: var(--forest); color: white;
+      display: inline-flex; align-items: center; justify-content: center; gap: 25px;
+      text-decoration: none; font-size: 9px; font-weight: 800;
+      letter-spacing: .16em; text-transform: uppercase;
+      transition: background .25s, transform .25s;
+    }
+    .btn:hover { background: #3a5943; transform: translateY(-2px); }
+    .underlink { color: var(--forest); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--sand); padding-bottom: 7px; }
+    .hero-foot { position: absolute; left: 13.5%; bottom: 34px; color: #969487; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; }
+    .video-pane { position: relative; min-width: 0; overflow: hidden; isolation: isolate; background: var(--forest-deep); }
+    .section-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-video { object-position: center; opacity: .92; }
+    .video-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,24,18,.04), rgba(14,24,18,.44)); pointer-events: none; }
+    .video-caption { position: absolute; right: 7%; bottom: 7%; color: #fff9ef; text-align: right; font-size: 8px; letter-spacing: .2em; text-transform: uppercase; text-shadow: 0 2px 15px #000; }
+    .video-caption span { display: block; margin-top: 8px; color: #d4b184; }
+    .menu-section {
+      position: relative; display: grid; grid-template-columns: .9fr 1.1fr;
+      min-height: 620px; overflow: hidden; background: var(--paper); isolation: isolate;
+    }
+    .menu-visual { min-height: 620px; }
+    .menu-visual .section-video { object-position: center; }
+    .menu-visual:after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(17,31,22,.56), rgba(17,31,22,.08)); }
+    .menu-visual-copy { position: absolute; z-index: 2; left: 9%; right: 8%; bottom: 9%; color: white; }
+    .menu-visual-copy small { color: #e2c49a; font-size: 8px; letter-spacing: .22em; text-transform: uppercase; }
+    .menu-visual-copy h2 { margin: 12px 0 0; font: 500 clamp(42px, 5vw, 70px)/.98 var(--serif); }
+    .menu-content { padding: clamp(66px, 8vw, 108px) 10%; display: flex; flex-direction: column; justify-content: center; }
+    .menu-content h2 { margin: 17px 0 15px; color: var(--forest); font: 500 clamp(46px, 5.3vw, 72px)/.98 var(--serif); letter-spacing: -.055em; }
+    .menu-content h2 em { color: #a78358; }
+    .menu-content .section-copy { margin: 0 0 24px; }
+    .menu-list { border-top: 1px solid #dcd5c7; margin: 12px 0 28px; }
+    .menu-row { padding: 15px 0; border-bottom: 1px solid #dcd5c7; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+    .menu-row strong { font: 500 24px/1.1 var(--serif); color: var(--forest); }
+    .menu-row span { color: #9b7950; font-size: 8px; letter-spacing: .17em; text-transform: uppercase; white-space: nowrap; }
+    .menu-footnote { color: #8a877c; font-size: 10px; line-height: 1.7; }
+    .contact-section {
+      min-height: 560px; position: relative; display: grid; grid-template-columns: 1fr .8fr;
+      gap: 10%; align-items: center; padding: 90px 9%;
+      color: #f5f0e6; background: var(--forest-deep); overflow: hidden; isolation: isolate;
+    }
+    .contact-section .section-video { object-position: center 54%; opacity: .52; }
+    .contact-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(13,28,19,.88), rgba(13,28,19,.66)); }
+    .contact-copy, .contact-details { position: relative; z-index: 1; }
+    .contact-section .label { color: #d4b184; }
+    .contact-section h2 { margin: 18px 0 26px; color: #f5f0e6; font: 500 clamp(58px, 7vw, 92px)/.9 var(--serif); letter-spacing: -.055em; }
+    .contact-section h2 em { color: #d4b184; }
+    .contact-copy p:not(.label) { max-width: 390px; color: rgba(245,240,230,.78); font-size: 12px; line-height: 2; }
+    .contact-details { border-left: 1px solid rgba(212,177,132,.55); padding: 12px 0 12px 34px; }
+    .contact-details small { color: #d4b184; font-size: 8px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    .contact-details h3 { margin: 10px 0 25px; color: #f5f0e6; font: 500 26px/1.3 var(--serif); }
+    .contact-details a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(212,177,132,.7); }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 7%; color: #d9dfd7; background: #122219; }
+    .footer img { width: 58px; height: 58px; object-fit: contain; background: var(--milk); mix-blend-mode: normal; }
+    .footer span, .footer small, .footer a { font-size: 9px; color: #c7d0c5; }
+    .footer a { text-decoration: none; letter-spacing: .16em; text-transform: uppercase; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 900px) {
+      .topbar { padding: 0 5%; } .nav { gap: 22px; }
+      .hero-copy { padding-left: 9%; padding-right: 6%; }
+      .hero-foot { left: 9%; }
+      .menu-content { padding-left: 8%; padding-right: 8%; }
+    }
+    @media (max-width: 650px) {
+      html { scroll-padding-top: 70px; }
+      .topbar { height: 72px; padding: 0 5%; }
+      .brand-logo { width: 64px; height: 64px; }
+      .nav { gap: 15px; }
+      .nav a { font-size: 8px; letter-spacing: .1em; }
+      .top-contact { display: none; }
+      .hero { min-height: 0; padding-top: 72px; display: flex; flex-direction: column; }
+      .hero-copy { min-height: 540px; padding: 64px 7% 72px; }
+      h1 { font-size: clamp(90px, 24vw, 132px); margin: 28px 0 22px; }
+      .tagline { font-size: 30px; }
+      .hero-description { font-size: 11px; margin: 20px 0 27px; }
+      .hero-foot { left: 7%; bottom: 22px; }
+      .video-pane { min-height: 0; aspect-ratio: 9 / 12; }
+      .hero-video { object-position: center; }
+      .menu-section { grid-template-columns: 1fr; }
+      .menu-visual { min-height: 0; aspect-ratio: 4 / 3; }
+      .menu-visual-copy { left: 7%; bottom: 8%; }
+      .menu-visual-copy h2 { font-size: 48px; }
+      .menu-content { padding: 62px 7% 72px; }
+      .menu-content h2 { font-size: 56px; }
+      .menu-row strong { font-size: 22px; }
+      .contact-section { min-height: 0; grid-template-columns: 1fr; gap: 32px; padding: 74px 7% 68px; }
+      .contact-section h2 { font-size: 70px; }
+      .contact-details { border-left: 0; border-top: 1px solid rgba(212,177,132,.55); padding: 25px 0 0; }
+      .footer { flex-wrap: wrap; padding: 20px 6%; }
+      .footer span { width: calc(100% - 90px); }
+      .footer small { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *:before, *:after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .section-video { display: none; }
+      .video-pane, .menu-visual, .contact-section { background: #28392e; }
+    }
+  </style>
 </head>
 <body>
 <header class="topbar">
-<a class="wordmark" href="#top" aria-label="ГОРЫ — главная"><span class="wordmark-symbol">Г</span><span><span class="wordmark-main">ГОРЫ</span><span class="wordmark-sub">гастро · кофе</span></span></a>
-<nav class="nav" aria-label="Главная навигация"><a href="#menu">Меню</a><a href="#coffee">Кофе</a><a href="#about">О нас</a><a href="#contacts">Контакты</a></nav>
-<a class="top-contact" href="tel:+79803842800">+7 (980) 384-28-00</a>
+  <a class="brand-link" href="#top" aria-label="ГОРЫ — главная">
+    <img class="brand-logo" src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Оригинальный логотип Гастрокофе ГОРЫ">
+  </a>
+  <nav class="nav" aria-label="Главная навигация">
+    <a href="#menu">Меню</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="top-contact" href="tel:+79803842800">+7 (980) 384-28-00</a>
 </header>
 <main id="top">
-<section class="hero" aria-label="Гастрокофе ГОРЫ">
-<div class="hero-copy">
-<p class="kicker">Гастрокофе · Белгород</p>
-<h1>ГОРЫ<span>.</span></h1>
-<div class="hero-tagline">Выше суеты.<br><em>Ближе к вкусу.</em></div>
-<p class="hero-description">Премиальный зерновой кофе, сочная шаурма, кебаб в лаваше, сэндвичи и десерты. Место, где можно выдохнуть и выбрать что-то по-настоящему вкусное.</p>
-<div class="actions"><a class="btn" href="#menu">Смотреть меню <span>↗</span></a><a class="underlink" href="#contacts">Как нас найти</a></div>
-<div class="hero-foot">Кофе · Еда · Впечатления</div>
-</div>
-<div class="hero-media">
-<span class="media-index">01 / 04</span>
-<video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" aria-label="Видео приготовления кофе">
-<source src="assets/gory-coffee.mp4?v=20261105-4" type="video/mp4">
-</video>
-<div class="media-caption">От зерна — к любимому кофе<span>Гастрокофе «ГОРЫ» · Белгород</span></div>
-</div>
-</section>
-<div class="trustline"><span>Качественное зерно</span><b>✳</b><span>Свежие ингредиенты</span><b>✳</b><span>Готовим каждый день</span><b>✳</b><span>Вкус с характером</span></div>
-<section class="section menu" id="menu">
-<div class="section-head reveal"><div><p class="label">Меню «ГОРЫ»</p><h2 class="heading">Вкус, который<br><em>собирает вместе.</em></h2></div><p class="intro">Знакомые любимые блюда и кофе, ради которого хочется сделать паузу. Выбирайте настроение.</p></div>
-<div class="menu-layout">
-<article class="food-card menu-large reveal"><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1400&q=90" alt="Шаурма с мясом и свежими овощами" loading="lazy"><div class="food-card-copy"><small>01 / Street food</small><h3>Шаурма<br>и кебаб</h3><p>Сочно, щедро, с характером</p></div></article>
-<div class="menu-side">
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85" alt="Кофе в керамической чашке" loading="lazy"><div class="food-card-copy"><small>02 / Coffee</small><h3>Зерновой<br>кофе</h3></div></article>
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=1000&q=85" alt="Свежий сэндвич" loading="lazy"><div class="food-card-copy"><small>03 / Fresh</small><h3>Сэндвичи</h3></div></article>
-</div></div>
-<div class="menu-bottom">
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85" alt="Десерт с ягодами" loading="lazy"><div class="food-card-copy"><small>04 / Sweet</small><h3>Десерты</h3></div></article>
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=85" alt="Свежие ингредиенты для блюд" loading="lazy"><div class="food-card-copy"><small>05 / Fresh</small><h3>Свежие блюда</h3></div></article>
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=85" alt="Завтрак с фруктами" loading="lazy"><div class="food-card-copy"><small>06 / Morning</small><h3>Завтраки</h3></div></article>
-</div>
-</section>
-<section class="coffee-story" id="coffee">
-<div class="coffee-visual" aria-label="Анимация кофейных зёрен"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1400&q=90" alt="Обжаренные кофейные зёрна" loading="lazy"><i class="bean b1"></i><i class="bean b2"></i><i class="bean b3"></i><i class="bean b4"></i><div class="coffee-visual-caption">Маленький ритуал большого дня.</div></div>
-<div class="coffee-copy reveal"><p class="label">Кофейная философия</p><h2 class="heading">Начинается<br>с <em>аромата.</em></h2><p>Путь к хорошей чашке начинается с зерна. Аромат свежего помола, точность приготовления и первый глоток — маленький ритуал, который задаёт настроение всему дню.</p><span class="coffee-sign">Specialty coffee · Freshly brewed</span></div>
-</section>
-<section class="section about" id="about"><div class="reveal"><p class="label">О месте</p><h2 class="heading">Просто.<br>Честно.<br><em>С любовью.</em></h2></div><div class="about-copy reveal">«ГОРЫ» — гастрокофе для тех, кто ценит хороший кофе и еду, приготовленную с вниманием. Мы соединили любимые вкусы, свежие ингредиенты и спокойную атмосферу, чтобы у вас было своё место для короткой паузы, встречи или вкусного обеда.<div class="about-sign">Выше суеты. Ближе к вкусу.</div></div></section>
-<section class="section visit" id="contacts"><div class="reveal"><p class="label">Будем рады видеть</p><h2 class="heading">До встречи<br>в <em>ГОРАХ.</em></h2><p class="visit-copy">Заглядывайте за любимым кофе, обедом или хорошим настроением.</p><a class="btn" href="https://yandex.ru/maps/org/gory/133866911303/?ll=36.602979%2C50.592956&z=17" target="_blank" rel="noopener noreferrer">Построить маршрут <span>↗</span></a></div>
-<div class="visit-details reveal"><small>Наш адрес</small><h3>Белгород,<br>Гражданский пр-т, 5</h3><small>Телефон</small><h3><a href="tel:+79803842800">+7 (980) 384-28-00</a></h3><small>Instagram</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noopener noreferrer">@go_gory_bgd ↗</a></h3></div></section>
+  <section class="hero" aria-label="Гастрокофе ГОРЫ">
+    <div class="hero-copy">
+      <p class="kicker">Гастрокофе · Белгород</p>
+      <h1>ГОРЫ<span>.</span></h1>
+      <div class="tagline">Выше суеты.<br><em>Ближе к вкусу.</em></div>
+      <p class="hero-description">Премиальный зерновой кофе, сочная шаурма, кебаб в лаваше, сэндвичи и десерты. Место, где можно выдохнуть и выбрать что-то по-настоящему вкусное.</p>
+      <div class="actions"><a class="btn" href="#menu">Смотреть меню <span>↗</span></a><a class="underlink" href="#contacts">Как нас найти</a></div>
+      <div class="hero-foot">Кофе · Еда · Впечатления</div>
+    </div>
+    <div class="video-pane">
+      <video class="section-video hero-video" data-video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" aria-label="Видео кофейного зерна">
+        <source src="assets/gory-coffee.mp4" type="video/mp4">
+      </video>
+      <div class="video-shade"></div>
+      <div class="video-caption">От зерна — к любимому кофе<span>Гастрокофе «ГОРЫ» · Белгород</span></div>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="video-pane menu-visual">
+      <video class="section-video" data-video muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" aria-hidden="true">
+        <source src="assets/gory-coffee.mp4" type="video/mp4">
+      </video>
+      <div class="video-shade"></div>
+      <div class="menu-visual-copy"><small>Меню «ГОРЫ»</small><h2>Хороший вкус<br>без лишних слов.</h2></div>
+    </div>
+    <div class="menu-content reveal">
+      <p class="label">Кофе · кухня · десерты</p>
+      <h2>Есть повод<br><em>зайти.</em></h2>
+      <p class="section-copy">От чашки зернового кофе до сытного обеда — выбирайте то, что подходит именно сегодня.</p>
+      <div class="menu-list">
+        <div class="menu-row"><strong>Шаурма и кебаб</strong><span>Сытно и сочно</span></div>
+        <div class="menu-row"><strong>Кофе и напитки</strong><span>Классика и любимое</span></div>
+        <div class="menu-row"><strong>Сэндвичи и завтраки</strong><span>На каждый день</span></div>
+        <div class="menu-row"><strong>Десерты</strong><span>К кофе</span></div>
+      </div>
+      <p class="menu-footnote">Актуальное наличие и состав блюд уточняйте у команды гастрокофе.</p>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contacts">
+    <video class="section-video" data-video muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" aria-hidden="true">
+      <source src="assets/gory-coffee.mp4" type="video/mp4">
+    </video>
+    <div class="contact-shade"></div>
+    <div class="contact-copy reveal">
+      <p class="label">Будем рады видеть</p>
+      <h2>До встречи<br>в <em>ГОРАХ.</em></h2>
+      <p>Заглядывайте за любимым кофе, обедом или хорошим настроением.</p>
+      <a class="btn" href="https://yandex.ru/maps/org/gory/133866911303/?ll=36.602979%2C50.592956&z=17" target="_blank" rel="noopener noreferrer">Построить маршрут <span>↗</span></a>
+    </div>
+    <div class="contact-details reveal">
+      <small>Наш адрес</small><h3>Белгород,<br>Гражданский пр-т, 5</h3>
+      <small>Телефон</small><h3><a href="tel:+79803842800">+7 (980) 384-28-00</a></h3>
+      <small>Instagram</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noopener noreferrer">@go_gory_bgd ↗</a></h3>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="footer-brand">ГОРЫ</div><span>Выше суеты. Ближе к вкусу.</span><a href="#top">Наверх ↑</a><small>© ГОРЫ · 2026</small></footer>
+<footer class="footer">
+  <img src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Логотип Гастрокофе ГОРЫ">
+  <span>Выше суеты. Ближе к вкусу.</span>
+  <a href="#top">Наверх ↑</a>
+  <small>© Гастрокофе «ГОРЫ» · 2026</small>
+</footer>
 <script>
-(()=>{const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});items.forEach(item=>observer.observe(item))}else{items.forEach(item=>item.classList.add('visible'))}
-const video=document.querySelector('.hero-video');if(video){video.addEventListener('error',()=>{video.style.backgroundImage='url(https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85)';video.style.backgroundSize='cover';video.style.display='block'});const play=video.play();if(play&&play.catch)play.catch(()=>{});}
+(() => {
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('visible'));
+  }
+
+  const videos = document.querySelectorAll('[data-video]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    videos.forEach(video => video.pause());
+    return;
+  }
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          const playResult = video.play();
+          if (playResult && playResult.catch) playResult.catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.08 });
+    videos.forEach(video => videoObserver.observe(video));
+  } else {
+    videos.forEach(video => {
+      const playResult = video.play();
+      if (playResult && playResult.catch) playResult.catch(() => {});
+    });
+  }
 })();
 </script>
 </body>
