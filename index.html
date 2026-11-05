@@ -1,172 +1,143 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f3efe6"><meta name="description" content="ГОРЫ — гастрокофе в Белгороде. Зерновой кофе, шаурма, кебаб, сэндвичи и десерты.">
-<title>ГОРЫ — гастрокофе с характером</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f1e9">
+<meta name="description" content="ГОРЫ — гастрокофе в Белгороде. Зерновой кофе, шаурма, кебаб, сэндвичи и десерты.">
+<title>ГОРЫ — гастрокофе в Белгороде</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#f3efe6;--paper:#faf8f2;--green:#203b2e;--deep:#14291f;--gold:#b58a54;--ink:#243329;--muted:#77796f}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}a{color:inherit}
-.cursor-glow{position:fixed;width:260px;height:260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#d9c29b30,transparent 68%);z-index:0;transform:translate(-50%,-50%)}
-header{height:82px;position:absolute;z-index:10;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 6.5%;border-bottom:1px solid #fff6;color:white}
-.logo{display:flex;align-items:center;text-decoration:none;width:155px}.logo img{display:block;width:100%;height:auto;filter:brightness(0) invert(1)}.footer-logo{width:130px;height:auto;filter:brightness(0) invert(1)}
-nav{display:flex;gap:34px}nav a,.head-cta{font-size:10px;text-transform:uppercase;letter-spacing:.14em;text-decoration:none;font-weight:700}nav a{opacity:.85;transition:.3s}nav a:hover{color:#e4c18b}.head-cta{border:1px solid #d8bd91;padding:13px 18px;border-radius:30px;color:#f4e7d1}
-.hero{min-height:810px;height:100svh;max-height:1000px;position:relative;display:flex;align-items:center;overflow:hidden;background:#18271f;color:#fff}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,#102219f2 0%,#14281fd9 34%,#14281f55 67%,#14281f25 100%),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2200&q=90') center 48%/cover;transform:scale(1.08);animation:heroZoom 18s ease-in-out infinite alternate}
-.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#14251f8c,transparent 35%,#10221940);pointer-events:none}
-.hero-content{position:relative;z-index:2;width:min(610px,55%);margin-left:10%;padding-top:50px;animation:rise 1.2s .15s both}
-.kicker{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#d8b77f;font-weight:800;display:flex;align-items:center;gap:13px}.kicker:before{content:'';width:34px;height:1px;background:currentColor}
-.hero h1{font:500 clamp(90px,13vw,180px)/.78 'Playfair Display',serif;letter-spacing:-.075em;margin:34px 0 30px}.hero h1 span{color:#d8b77f;font-style:italic}
-.hero-sub{font:clamp(25px,3vw,42px)/1.15 'Playfair Display',serif;color:#f1e7d6}.hero-sub em{color:#d8b77f}
-.hero-copy{max-width:360px;color:#e0dfd4b8;font-size:12px;line-height:1.9;margin:24px 0 32px}
-.hero-actions{display:flex;align-items:center;gap:26px}.btn{background:#d6b47d;color:#1b3024;text-decoration:none;border-radius:30px;padding:16px 23px;font-size:9px;font-weight:800;letter-spacing:.12em;display:inline-flex;gap:28px;align-items:center;transition:.35s}.btn:hover{background:#f0d5a5;transform:translateY(-4px);box-shadow:0 12px 30px #0004}.text-link{font-size:9px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff}
-.hero-note{position:absolute;z-index:2;right:8%;bottom:10%;border-left:1px solid #d6b47d;padding:7px 0 7px 17px;color:#eee6d8;font-size:9px;letter-spacing:.2em;line-height:1.8}
-.hero-scroll{position:absolute;z-index:2;bottom:34px;left:6.5%;font-size:8px;letter-spacing:.2em;color:#fff9;display:flex;align-items:center;gap:13px}.hero-scroll:after{content:'';width:54px;height:1px;background:#d6b47d;animation:linePulse 2s infinite}
-.vertical-word{position:absolute;z-index:2;right:4%;top:43%;writing-mode:vertical-rl;font-size:8px;letter-spacing:.4em;color:#fff8}
-.marquee{background:var(--gold);color:var(--deep);overflow:hidden;padding:17px 0;white-space:nowrap;font-size:9px;letter-spacing:.22em;font-weight:800}.marquee-track{display:inline-flex;gap:26px;animation:marquee 32s linear infinite}.marquee i{font-style:normal;color:#fff2;font-size:17px}
-section{position:relative}.intro{padding:125px 9%;display:grid;grid-template-columns:.75fr 1.25fr;gap:10%;align-items:center;background:var(--paper)}
-.section-tag{font-size:9px;letter-spacing:.25em;color:var(--gold);font-weight:800;text-transform:uppercase}.intro h2,.menu h2,.manifesto h2,.visit h2{font:500 clamp(44px,6vw,76px)/1.02 'Playfair Display',serif;letter-spacing:-.045em;margin:18px 0}.intro h2 em,.menu h2 em,.manifesto h2 em,.visit h2 em{color:var(--gold)}
-.intro-text{font-size:13px;line-height:2;color:var(--muted);max-width:570px}.intro-sign{margin-top:27px;font:italic 20px 'Playfair Display';color:var(--green)}
-.menu{padding:120px 7%;background:var(--cream)}.menu-top{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}.menu-top p{max-width:290px;font-size:11px;line-height:1.9;color:var(--muted)}
-.food-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:270px 270px;gap:15px}
-.food-card{position:relative;overflow:hidden;background:#d9c8ad;isolation:isolate}.food-card:first-child{grid-row:span 2}.food-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);filter:saturate(.85)}.food-card:hover img{transform:scale(1.08)}.food-card:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#101b15d9,transparent 60%);z-index:1}.food-card .food-info{position:absolute;z-index:2;left:25px;bottom:23px;color:white}.food-info small{font-size:8px;letter-spacing:.2em;color:#e1c28d}.food-info h3{font:28px 'Playfair Display';margin:8px 0}.food-card:first-child .food-info h3{font-size:42px}.food-info p{font-size:10px;color:#fff9;margin:0}
-.menu-foot{margin-top:25px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.13em;color:var(--muted)}
-.manifesto{display:grid;grid-template-columns:1fr 1fr;background:var(--deep);color:white;min-height:640px}.manifesto-photo{position:relative;overflow:hidden;min-height:600px}.manifesto-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.4s}.manifesto-photo:hover img{transform:scale(1.05)}.manifesto-copy{padding:100px 12%;align-self:center}.manifesto-copy p:not(.section-tag){font-size:12px;line-height:2;color:#c8d0c6;margin:27px 0;max-width:440px}.manifesto h2{color:#f8f3e8}.manifesto .section-tag{color:#d6b47d}
-.stats{display:flex;gap:35px;margin-top:44px}.stat{border-top:1px solid #ffffff35;padding-top:15px}.stat strong{font:30px 'Playfair Display';color:#d6b47d}.stat span{display:block;font-size:8px;letter-spacing:.15em;color:#c4cabe;margin-top:7px}
-.visit{padding:120px 9%;background:#e9e3d7;display:grid;grid-template-columns:1.2fr .8fr;gap:10%;align-items:center}.visit h2{font-size:clamp(50px,7vw,86px)}.visit-copy p{font-size:12px;color:var(--muted);line-height:1.9;max-width:390px;margin-bottom:28px}.visit-details{border-left:1px solid #b9a27f;padding:15px 0 15px 38px}.visit-details small{font-size:8px;letter-spacing:.2em;color:var(--gold);font-weight:800}.visit-details h3{font:27px/1.35 'Playfair Display';font-weight:500;margin:12px 0 35px}.visit-details a{text-decoration:none}
-footer{padding:27px 7%;background:#13271e;color:#e8e3d8;display:flex;justify-content:space-between;align-items:center;font-size:9px}footer strong{letter-spacing:.2em}footer a{color:#d6b47d;text-decoration:none}
-.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}.reveal.delay{transition-delay:.18s}.reveal.delay2{transition-delay:.32s}
-.steam{position:absolute;z-index:3;right:13%;bottom:18%;width:100px;height:170px;opacity:.5;pointer-events:none}.steam span{position:absolute;bottom:0;width:24px;height:120px;border-left:2px solid #fff8;border-radius:50%;filter:blur(2px);animation:steam 3.5s ease-in-out infinite}.steam span:nth-child(2){left:28px;animation-delay:.8s;height:95px}.steam span:nth-child(3){left:55px;animation-delay:1.5s;height:130px}
-@keyframes heroZoom{to{transform:scale(1.17) translateX(-1.5%)}}@keyframes rise{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes linePulse{0%,100%{transform:scaleX(.5);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}@keyframes steam{0%{transform:translateY(20px) scaleX(.7);opacity:0}35%{opacity:.65}100%{transform:translateY(-65px) scaleX(1.5);opacity:0}}
-@media(max-width:800px){header{padding:0 5%;height:70px}nav{gap:15px}nav a{font-size:8px}.head-cta{padding:10px;font-size:8px}.hero{min-height:760px}.hero-content{width:75%;margin-left:7%}.hero-bg{background-position:58% center}.hero h1{font-size:clamp(90px,17vw,145px)}.intro{padding:85px 7%;grid-template-columns:1fr;gap:20px}.menu{padding:85px 5%}.food-grid{grid-template-columns:1fr 1fr;grid-template-rows:310px 230px 230px}.food-card:first-child{grid-column:span 2;grid-row:auto}.manifesto{grid-template-columns:1fr}.manifesto-photo{min-height:390px}.manifesto-copy{padding:75px 8%}.visit{padding:85px 7%;grid-template-columns:1fr;gap:30px}.visit-details{border-left:0;border-top:1px solid #b9a27f;padding:25px 0 0}.hero-note,.vertical-word{display:none}}
-@media(max-width:520px){nav{display:none}.head-cta{font-size:7px}.hero{height:850px;min-height:850px;max-height:none;align-items:flex-start}.hero-bg{background-image:linear-gradient(90deg,#102219e8 0%,#14281f9c 65%,#14281f60),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=88');background-position:60% center}.hero-content{width:88%;margin:0 6%;padding-top:175px}.hero h1{font-size:clamp(88px,22vw,120px);margin:32px 0}.hero-sub{font-size:29px}.hero-copy{font-size:11px}.hero-actions{gap:17px}.btn{padding:15px 17px;font-size:8px}.hero-scroll{bottom:24px}.steam{right:5%;bottom:14%;transform:scale(.7)}.menu-top{display:block}.menu-top p{margin-top:15px}.food-grid{grid-template-columns:1fr 1fr;grid-template-rows:270px 185px 185px;gap:9px}.food-card:first-child .food-info h3{font-size:29px}.food-info{left:13px!important;bottom:14px!important}.food-info h3{font-size:20px}.food-info p{font-size:8px}.menu-foot{font-size:7px}.manifesto-photo{min-height:300px}.manifesto-copy{padding:65px 7%}.stats{gap:18px}.stat strong{font-size:25px}footer{gap:15px;flex-wrap:wrap}footer span{width:100%}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
-
-/* COFFEE MOTION SCENE */
-.coffee-film{min-height:680px;background:radial-gradient(ellipse at 50% 55%,#425744 0%,#20392c 43%,#14271e 78%);color:#f8f0e2;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:90px 10%;isolation:isolate}
-.coffee-film:before{content:"";position:absolute;inset:-30%;background:repeating-radial-gradient(ellipse at 50% 50%,transparent 0 80px,#ffffff08 82px 83px);animation:coffeeOrbit 45s linear infinite;z-index:-1}
-.coffee-copy{position:relative;z-index:3;max-width:440px}.coffee-copy .section-tag{color:#d9b77e}.coffee-copy h2{font:500 clamp(48px,6vw,82px)/.98 'Playfair Display',serif;letter-spacing:-.045em;margin:20px 0}.coffee-copy h2 em{color:#d9b77e}.coffee-copy p:not(.section-tag){font-size:12px;line-height:2;color:#e1e4d9bd;max-width:350px}
-.coffee-art{height:470px;position:relative;display:grid;place-items:center;perspective:900px}
-.cup-shadow{position:absolute;width:330px;height:50px;bottom:52px;border-radius:50%;background:#050d09a8;filter:blur(20px)}
-.espresso-cup{position:relative;width:250px;height:190px;margin-top:95px;border-radius:12px 12px 90px 90px;background:linear-gradient(105deg,#e7dfcf 0%,#fff9eb 22%,#c7bba7 56%,#f2e9d9 78%,#b6a58f 100%);box-shadow:inset -18px -10px 25px #71614b45,0 28px 50px #0007;transform:rotate(-7deg);animation:cupFloat 5s ease-in-out infinite}
-.espresso-cup:before{content:"";position:absolute;right:-78px;top:28px;width:92px;height:95px;border:19px solid #d7cbb8;border-left:0;border-radius:0 60px 60px 0;box-shadow:inset -8px 0 10px #66513b35}
-.espresso-cup:after{content:"";position:absolute;left:13px;right:13px;top:-15px;height:35px;border-radius:50%;background:radial-gradient(ellipse at 50% 45%,#4b2412 0 37%,#a65e2e 40% 47%,#e1b66e 50% 57%,#f6eddd 60%);box-shadow:0 5px 9px #2b1b13a6}
-.coffee-swirl{position:absolute;z-index:2;top:-8px;left:50%;width:75px;height:18px;transform:translateX(-50%) rotate(-8deg);border-radius:50%;border:2px solid #f2d29a;border-left-color:transparent;border-bottom-color:#e3b66f;animation:swirl 4s linear infinite}
-.cup-logo{position:absolute;z-index:2;left:0;right:0;top:78px;text-align:center;color:#5b503e;font:italic 24px 'Playfair Display';letter-spacing:.08em}
-.coffee-stream{position:absolute;z-index:4;top:8px;left:51%;width:13px;height:150px;background:linear-gradient(90deg,#6c3219,#c17a3c,#5a2917);border-radius:50%;transform:rotate(3deg);filter:blur(.4px);transform-origin:top;animation:pour 2.6s ease-in-out infinite}
-.coffee-stream:after{content:"";position:absolute;bottom:-9px;left:-5px;width:23px;height:17px;border-radius:50%;background:#a65a2d;filter:blur(1px)}
-.coffee-bean{position:absolute;width:30px;height:20px;border-radius:50%;background:linear-gradient(135deg,#9b6037,#4c2819 60%,#29170f);box-shadow:inset 3px 2px 5px #e2b17a55,0 8px 13px #0004;z-index:2}
-.coffee-bean:after{content:"";position:absolute;left:48%;top:2px;height:16px;width:7px;border-left:2px solid #d2a06a;border-radius:50%;transform:rotate(13deg)}
-.bean-1{top:13%;left:8%;animation:beanDrift1 8s ease-in-out infinite}.bean-2{top:20%;right:8%;transform:scale(.7);animation:beanDrift2 7s ease-in-out infinite}.bean-3{top:66%;left:4%;transform:scale(1.15) rotate(32deg);animation:beanDrift3 9s ease-in-out infinite}.bean-4{top:76%;right:5%;transform:scale(.8);animation:beanDrift1 10s ease-in-out infinite reverse}.bean-5{top:8%;left:43%;transform:scale(.55);animation:beanDrift2 6s ease-in-out infinite}.bean-6{bottom:13%;left:34%;transform:scale(.65);animation:beanDrift3 8s ease-in-out infinite}.bean-7{top:42%;left:2%;transform:scale(.6);animation:beanDrift2 9s ease-in-out infinite reverse}.bean-8{top:47%;right:1%;transform:scale(1.1);animation:beanDrift1 7.5s ease-in-out infinite}
-.coffee-ring{position:absolute;width:430px;height:430px;border:1px solid #d6b47d55;border-radius:50%;animation:ringPulse 7s ease-in-out infinite}.coffee-ring:before,.coffee-ring:after{content:"";position:absolute;inset:24px;border:1px solid #d6b47d30;border-radius:50%}.coffee-ring:after{inset:50px}
-@keyframes cupFloat{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-15px) rotate(-4deg)}}
-@keyframes pour{0%,100%{transform:scaleY(.78) rotate(3deg);opacity:.65}50%{transform:scaleY(1.08) rotate(1deg);opacity:1}}
-@keyframes swirl{to{transform:translateX(-50%) rotate(352deg)}}
-@keyframes beanDrift1{0%,100%{translate:0 0;rotate:-15deg}50%{translate:35px -42px;rotate:155deg}}
-@keyframes beanDrift2{0%,100%{translate:0 0;rotate:15deg}50%{translate:-28px 36px;rotate:190deg}}
-@keyframes beanDrift3{0%,100%{translate:0 0;rotate:20deg}50%{translate:18px -55px;rotate:210deg}}
-@keyframes ringPulse{0%,100%{transform:scale(.94) rotate(0);opacity:.55}50%{transform:scale(1.04) rotate(18deg);opacity:1}}
-@keyframes coffeeOrbit{to{transform:rotate(360deg)}}
-@media(max-width:800px){.coffee-film{grid-template-columns:1fr;padding:75px 7%;gap:5px}.coffee-art{height:410px;order:2}.coffee-copy{order:1}.coffee-ring{width:340px;height:340px}.espresso-cup{transform:scale(.83) rotate(-7deg);margin-top:70px}.coffee-stream{top:0;height:130px}}
-@media(max-width:520px){.coffee-film{padding:70px 6% 35px}.coffee-art{height:360px;transform:scale(.88);margin:-10px -25px}.coffee-copy h2{font-size:54px}.coffee-ring{width:300px;height:300px}}
-@media(prefers-reduced-motion:reduce){.coffee-film:before,.espresso-cup,.coffee-stream,.coffee-swirl,.coffee-bean,.coffee-ring{animation:none!important}}
-
-
-/* Cinematic flying coffee beans */
-.coffee-film{isolation:isolate}
-.bean-flight{position:absolute;z-index:1;width:22px;height:15px;border-radius:50%;background:linear-gradient(140deg,#b77a48 0%,#6a3b20 45%,#28150d 100%);box-shadow:inset 3px 2px 4px #f0c08a75,0 9px 18px #0006;pointer-events:none}
-.bean-flight:after{content:"";position:absolute;left:48%;top:1px;height:13px;width:5px;border-left:2px solid #d9a36b;border-radius:50%;transform:rotate(12deg)}
-.bean-flight.f1{top:8%;left:-4%;animation:beanAcross1 8s cubic-bezier(.45,.05,.55,.95) infinite}
-.bean-flight.f2{top:28%;left:-8%;transform:scale(1.5);animation:beanAcross2 10s 1.2s ease-in-out infinite}
-.bean-flight.f3{top:72%;left:-6%;transform:scale(.7);animation:beanAcross3 9s 2s ease-in-out infinite}
-.bean-flight.f4{top:88%;left:12%;transform:scale(1.2);animation:beanAcross4 11s .5s ease-in-out infinite}
-.bean-flight.f5{top:4%;left:56%;transform:scale(.8);animation:beanAcross3 7s 1.7s ease-in-out infinite}
-.bean-flight.f6{top:90%;left:78%;transform:scale(.65);animation:beanAcross1 9s 2.4s ease-in-out infinite reverse}
-.coffee-film:after{content:"";position:absolute;z-index:0;left:-25%;right:-25%;top:48%;height:1px;background:linear-gradient(90deg,transparent,#d6b47d66,transparent);transform:rotate(-13deg);filter:blur(1px)}
-@keyframes beanAcross1{0%{translate:-10vw 16vh;rotate:0deg;opacity:0}12%{opacity:1}55%{translate:42vw -13vh;rotate:520deg;opacity:1}100%{translate:115vw 12vh;rotate:1050deg;opacity:0}}
-@keyframes beanAcross2{0%{translate:-12vw -9vh;rotate:20deg;opacity:0}15%{opacity:1}60%{translate:58vw 20vh;rotate:720deg;opacity:1}100%{translate:120vw -10vh;rotate:1200deg;opacity:0}}
-@keyframes beanAcross3{0%{translate:-15vw 10vh;rotate:0deg;opacity:0}18%{opacity:.9}70%{translate:75vw -22vh;rotate:850deg;opacity:1}100%{translate:125vw 3vh;rotate:1300deg;opacity:0}}
-@keyframes beanAcross4{0%{translate:-10vw 0;rotate:0deg;opacity:0}18%{opacity:1}68%{translate:60vw -17vh;rotate:900deg;opacity:1}100%{translate:115vw 12vh;rotate:1500deg;opacity:0}}
-@media(max-width:520px){.logo{width:125px}.bean-flight{scale:.7}}
-@media(prefers-reduced-motion:reduce){.bean-flight{animation:none!important;display:none}}
-
-/* HERO REDIRECTION — coffee is the first impression */
-.hero{min-height:790px;height:min(100svh,980px);max-height:980px;background:#13251d}
-.hero-bg{background-image:linear-gradient(90deg,rgba(12,27,20,.96) 0%,rgba(15,31,23,.84) 34%,rgba(15,31,23,.20) 66%,rgba(15,31,23,.05) 100%),url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2200&q=90');background-position:center 52%;transform:scale(1.03);animation:coffeeHeroKen 22s ease-in-out infinite alternate}
-.hero-content{width:min(580px,52%);margin-left:9%;padding-top:30px}
-.hero h1{font-size:clamp(84px,11vw,154px);margin:30px 0 25px;letter-spacing:-.085em}
-.hero-sub{font-size:clamp(27px,3.1vw,43px)}
-.hero-copy{font-size:13px;max-width:390px;color:#f1e9d7c9}
-.hero-note{right:7%;bottom:9%;letter-spacing:.24em}
-.hero-beans{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
-.hero-beans i{position:absolute;width:28px;height:18px;border-radius:50%;background:linear-gradient(145deg,#b87940 0%,#6a381d 52%,#25150e 100%);box-shadow:inset 3px 2px 4px #f3c18a70,0 8px 20px #0008}
-.hero-beans i:after{content:"";position:absolute;left:48%;top:2px;height:14px;border-left:2px solid #d8a16a;border-radius:50%;transform:rotate(15deg)}
-.hero-beans i:nth-child(1){left:47%;top:15%;animation:flyA 10s ease-in-out infinite}
-.hero-beans i:nth-child(2){left:72%;top:8%;transform:scale(.7);animation:flyB 8s 1s ease-in-out infinite}
-.hero-beans i:nth-child(3){left:88%;top:35%;transform:scale(1.25);animation:flyC 11s .5s ease-in-out infinite}
-.hero-beans i:nth-child(4){left:62%;top:72%;transform:scale(.8);animation:flyA 9s 2s ease-in-out infinite reverse}
-.hero-beans i:nth-child(5){left:38%;top:78%;transform:scale(.6);animation:flyB 12s 1.4s ease-in-out infinite}
-.hero-beans i:nth-child(6){left:95%;top:70%;transform:scale(.55);animation:flyC 9s 2s ease-in-out infinite}
-.hero-beans i:nth-child(7){left:54%;top:40%;transform:scale(.9);animation:flyB 10s 3s ease-in-out infinite reverse}
-.hero-beans i:nth-child(8){left:79%;top:55%;transform:scale(1.1);animation:flyA 13s 1.7s ease-in-out infinite}
-.hero-beans i:nth-child(9){left:31%;top:27%;transform:scale(.55);animation:flyC 8s .9s ease-in-out infinite}
-.hero-beans i:nth-child(10){left:68%;top:88%;transform:scale(.75);animation:flyB 11s 2.4s ease-in-out infinite}
-@keyframes coffeeHeroKen{0%{transform:scale(1.02) translateX(0)}100%{transform:scale(1.13) translateX(-1.5%)}}
-@keyframes flyA{0%,100%{translate:0 0;rotate:-18deg}50%{translate:34px -52px;rotate:160deg}}
-@keyframes flyB{0%,100%{translate:0 0;rotate:12deg}50%{translate:-45px 38px;rotate:205deg}}
-@keyframes flyC{0%,100%{translate:0 0;rotate:8deg}50%{translate:25px -34px;rotate:190deg}}
-/* Cleaner editorial rhythm */
-.marquee{background:#c29a67;padding:14px 0}
-.intro{background:#f7f3eb}
-.menu{background:#eee8dc}
-.food-card{border-radius:3px}
-.manifesto-photo img{filter:saturate(.82) contrast(1.04)}
-.btn{border-radius:2px;letter-spacing:.16em}
-.head-cta{border-radius:2px}
-.logo{width:170px}
-.logo img{filter:brightness(0) invert(1)}
-@media(max-width:800px){.hero-content{width:74%;margin-left:7%}.hero-bg{background-position:60% center}}
-@media(max-width:520px){.hero{height:850px;min-height:850px}.hero-bg{background-position:62% center}.hero-content{width:88%;margin:0 6%;padding-top:170px}.hero h1{font-size:clamp(82px,21vw,118px)}.hero-beans i{scale:.7}.logo{width:132px}}
-@media(prefers-reduced-motion:reduce){.hero-bg,.hero-beans i{animation:none!important}}
+:root{--cream:#f4f1e9;--paper:#fbfaf6;--olive:#263b2d;--olive2:#354b3b;--gold:#ad8756;--ink:#202b23;--muted:#777b70;--line:#ded9cc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.site-header{height:88px;padding:0 7.2%;display:flex;align-items:center;justify-content:space-between;background:var(--paper);position:relative;z-index:5;border-bottom:1px solid #e9e5da}
+.brand{width:112px;display:block}.brand img{width:100%;height:auto}
+.nav{display:flex;align-items:center;gap:38px}.nav a{text-decoration:none;text-transform:uppercase;font-size:10px;letter-spacing:.13em;font-weight:700;color:#50584e;transition:color .25s}.nav a:hover{color:var(--gold)}
+.header-right{display:flex;align-items:center;gap:24px}.address-mini{font-size:10px;color:var(--muted);letter-spacing:.04em}.social-link{font-size:10px;font-weight:700;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gold);padding:0 0 7px}
+.hero{min-height:690px;display:grid;grid-template-columns:46% 54%;background:var(--olive);color:#fff;overflow:hidden}
+.hero-copy{padding:100px 8% 85px 15.7%;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.eyebrow{font-size:9px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--gold);display:flex;align-items:center;gap:13px}.eyebrow:before{content:"";width:28px;height:1px;background:currentColor}
+.hero h1{font:500 clamp(76px,9.2vw,132px)/.88 'Playfair Display',serif;letter-spacing:-.065em;margin:30px 0 22px;color:#f7f3e9}
+.hero h1 span{color:#c4a477;font-style:italic}
+.hero-lead{font:500 clamp(24px,2.7vw,37px)/1.2 'Playfair Display',serif;color:#eee8dc}
+.hero-lead em{color:#c4a477}
+.hero-description{max-width:350px;margin:25px 0 32px;color:#d9ded5;font-size:12px;line-height:1.9}
+.hero-actions{display:flex;align-items:center;gap:25px}
+.button{display:inline-flex;align-items:center;gap:25px;padding:16px 20px;background:#c2a174;color:#1f3025;text-decoration:none;text-transform:uppercase;font-size:9px;font-weight:800;letter-spacing:.14em;transition:background .25s,transform .25s}
+.button:hover{background:#dec39b;transform:translateY(-2px)}
+.quiet-link{color:#f4f0e7;text-decoration:none;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.hero-visual{position:relative;min-height:690px;overflow:hidden;background:#463a2b}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#263b2d30,transparent 25%),linear-gradient(0deg,#18271b44,transparent 35%)}
+.hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;animation:slowZoom 22s ease-in-out infinite alternate}
+.hero-caption{position:absolute;z-index:2;right:7%;bottom:8%;color:#fff;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-align:right}
+.hero-caption span{display:block;color:#e0c49a;margin-top:8px}
+.scroll-cue{position:absolute;bottom:25px;left:7.2%;font-size:8px;letter-spacing:.2em;color:#e5e4d9a8;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.scroll-cue:after{content:"";width:42px;height:1px;background:#c2a174}
+.intro-strip{padding:21px 7.2%;background:#e9e4d8;display:flex;justify-content:space-between;gap:25px;align-items:center}
+.intro-strip span{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:#596456;font-weight:700}
+.intro-strip b{color:var(--gold);font-size:16px;font-weight:400}
+.section{padding:112px 9%}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+.section-label{font-size:9px;letter-spacing:.23em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.section-title{font:500 clamp(43px,5.6vw,70px)/1.03 'Playfair Display',serif;letter-spacing:-.045em;margin:16px 0 0;color:var(--olive)}
+.section-title em{color:var(--gold)}
+.section-intro{max-width:310px;color:var(--muted);font-size:11px;line-height:1.9;margin:0 0 4px}
+.menu-section{background:var(--paper)}
+.menu-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:245px 245px;gap:14px}
+.menu-card{position:relative;overflow:hidden;background:#d4c6b2}
+.menu-card:first-child{grid-row:span 2}
+.menu-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.menu-card:hover img{transform:scale(1.045)}
+.menu-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(0deg,#17241cce,transparent)}
+.menu-card-copy{position:absolute;z-index:1;left:24px;bottom:22px;color:#fff}
+.menu-card-copy small{font-size:8px;letter-spacing:.18em;color:#e1c59b;text-transform:uppercase}
+.menu-card-copy h3{font:500 27px/1.1 'Playfair Display',serif;margin:8px 0 0}
+.menu-card:first-child .menu-card-copy h3{font-size:39px}
+.menu-card-copy p{font-size:10px;color:#f1eee7c9;margin:7px 0 0}
+.coffee-feature{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:#e9e4d8}
+.coffee-photo{position:relative;min-height:520px;overflow:hidden}
+.coffee-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.coffee-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#18291f4a,transparent 50%)}
+.coffee-copy{padding:85px 12%;display:flex;flex-direction:column;justify-content:center}
+.coffee-copy h2{font:500 clamp(46px,5.6vw,72px)/1 'Playfair Display',serif;letter-spacing:-.04em;color:var(--olive);margin:18px 0}
+.coffee-copy h2 em{color:var(--gold)}
+.coffee-copy p:not(.section-label){font-size:12px;line-height:2;color:#6d7469;max-width:390px;margin:0 0 26px}
+.coffee-note{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);border-top:1px solid #c9c1b2;padding-top:17px;width:max-content}
+.about-section{background:var(--olive);color:#f7f2e8;display:grid;grid-template-columns:.8fr 1.2fr;gap:11%;align-items:center}
+.about-section .section-title{color:#f7f2e8}.about-section .section-title em{color:#c5a77a}
+.about-copy{font-size:12px;line-height:2;color:#d4dbd1;max-width:560px}
+.about-sign{font:italic 22px 'Playfair Display',serif;color:#c5a77a;margin-top:25px}
+.visit-section{background:#f4f1e9;display:grid;grid-template-columns:1fr .8fr;gap:12%;align-items:center}
+.visit-section .section-title{font-size:clamp(54px,7vw,88px)}
+.visit-info{border-left:1px solid #c6b99f;padding:12px 0 12px 34px}
+.visit-info small{font-size:8px;letter-spacing:.2em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.visit-info h3{font:500 27px/1.35 'Playfair Display',serif;color:var(--olive);margin:12px 0 30px}
+.visit-info a{text-decoration:none;border-bottom:1px solid #c2a174;padding-bottom:4px}
+.visit-copy{font-size:12px;line-height:1.9;color:var(--muted);max-width:370px;margin:20px 0 27px}
+.footer{background:#182a20;color:#e8e4d9;padding:28px 7.2%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-brand{width:93px;filter:brightness(0) invert(1);opacity:.9}
+.footer span,.footer small{font-size:9px;color:#c7cec4}
+.footer a{color:#d1b184;text-decoration:none;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:none}
+@keyframes slowZoom{from{transform:scale(1.015)}to{transform:scale(1.09)}}
+@media(max-width:900px){.site-header{padding:0 5%;height:76px}.nav{gap:20px}.address-mini{display:none}.hero{grid-template-columns:48% 52%;min-height:620px}.hero-copy{padding:80px 7% 75px 11%}.hero-visual{min-height:620px}.section{padding:85px 7%}.menu-grid{grid-template-rows:220px 220px}.coffee-copy{padding:65px 9%}.about-section{gap:7%}}
+@media(max-width:620px){.site-header{height:70px}.brand{width:92px}.nav{display:none}.header-right{gap:0}.social-link{font-size:8px}.hero{display:flex;flex-direction:column;min-height:0}.hero-copy{padding:92px 7% 48px;min-height:510px}.hero h1{font-size:clamp(82px,22vw,118px);margin:28px 0 20px}.hero-lead{font-size:27px}.hero-description{font-size:11px;margin:20px 0 25px}.hero-visual{min-height:390px;height:390px}.hero-caption{right:7%;bottom:7%}.scroll-cue{display:none}.intro-strip{padding:17px 6%;gap:12px;flex-wrap:wrap}.intro-strip span{font-size:8px}.section{padding:75px 6%}.section-head{display:block;margin-bottom:30px}.section-intro{margin-top:17px}.menu-grid{grid-template-columns:1fr 1fr;grid-template-rows:280px 180px 180px;gap:9px}.menu-card:first-child{grid-column:span 2;grid-row:auto}.menu-card-copy{left:14px;bottom:14px}.menu-card-copy h3{font-size:21px}.menu-card:first-child .menu-card-copy h3{font-size:30px}.menu-card-copy p{font-size:8px}.coffee-feature{grid-template-columns:1fr}.coffee-photo{min-height:330px;height:330px}.coffee-copy{padding:62px 7% 70px}.coffee-copy h2{font-size:56px}.about-section{grid-template-columns:1fr;gap:22px}.visit-section{grid-template-columns:1fr;gap:25px}.visit-info{border-left:0;border-top:1px solid #c6b99f;padding:24px 0 0}.footer{flex-wrap:wrap;padding:25px 6%}.footer span{width:calc(100% - 115px)}.footer small{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fade-up{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="cursor-glow" aria-hidden="true"></div>
-<header><a class="logo" href="#top" aria-label="ГОРЫ — гастрокофе"><img src="assets/gory-logo.svg" alt="ГОРЫ — кофейня"></a><nav><a href="#menu">Меню</a><a href="#about">Философия</a><a href="#contacts">Контакты</a></nav><a class="head-cta" href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">Мы в Instagram ↗</a></header>
+<header class="site-header">
+<a class="brand" href="#top" aria-label="ГОРЫ"><img src="assets/gory-logo.svg" alt="ГОРЫ — кофейня"></a>
+<nav class="nav" aria-label="Главная навигация"><a href="#menu">Меню</a><a href="#coffee">Кофе</a><a href="#about">О нас</a><a href="#contacts">Контакты</a></nav>
+<div class="header-right"><span class="address-mini">Белгород · Гражданский пр-т, 5</span><a class="social-link" href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+</header>
 <main id="top">
-<section class="hero"><div class="hero-bg"></div><div class="hero-beans" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="hero-content"><p class="kicker">Гастрокофе · Белгород</p><h1>ГОРЫ<span>.</span></h1><div class="hero-sub">Кофе с характером.<br><em>Еда с настроением.</em></div><p class="hero-copy">Место, где встречаются хороший зерновой кофе, сочная уличная еда и удовольствие от каждого момента.</p><div class="hero-actions"><a class="btn" href="#menu">ОТКРЫТЬ МЕНЮ <b>↗</b></a><a class="text-link" href="#contacts">Найти нас ↓</a></div></div><div class="steam"><span></span><span></span><span></span></div><div class="hero-note">GOOD FOOD<br>GOOD COFFEE<br>GOOD MOOD</div><div class="vertical-word">TASTE THE MOMENT · GORY</div><div class="hero-scroll">ЛИСТАЙТЕ ВНИЗ</div></section>
-<div class="marquee"><div class="marquee-track"><span>КОФЕ С ХАРАКТЕРОМ</span><i>✳</i><span>ЕДА С НАСТРОЕНИЕМ</span><i>✳</i><span>СВЕЖЕЕ КАЖДЫЙ ДЕНЬ</span><i>✳</i><span>КОФЕ С ХАРАКТЕРОМ</span><i>✳</i><span>ЕДА С НАСТРОЕНИЕМ</span><i>✳</i><span>СВЕЖЕЕ КАЖДЫЙ ДЕНЬ</span><i>✳</i></div></div>
-
-<section class="coffee-film" aria-label="Анимация приготовления зернового кофе">
-  <div class="coffee-copy reveal">
-    <p class="section-tag">От зерна до первого глотка</p>
-    <h2>Ритуал,<br>который <em>пахнет</em><br>счастьем.</h2>
-    <p>Аромат свежемолотого зерна, густой эспрессо и мягкая молочная текстура. В «ГОРАХ» кофе — не просто напиток, а маленькая пауза, которую хочется повторить.</p>
-  </div>
-  <div class="coffee-art" aria-hidden="true">
-    <span class="bean-flight f1"></span><span class="bean-flight f2"></span><span class="bean-flight f3"></span><span class="bean-flight f4"></span><span class="bean-flight f5"></span><span class="bean-flight f6"></span><div class="coffee-ring"></div><div class="cup-shadow"></div>
-    <span class="coffee-bean bean-1"></span><span class="coffee-bean bean-2"></span><span class="coffee-bean bean-3"></span><span class="coffee-bean bean-4"></span>
-    <span class="coffee-bean bean-5"></span><span class="coffee-bean bean-6"></span><span class="coffee-bean bean-7"></span><span class="coffee-bean bean-8"></span>
-    <div class="coffee-stream"></div><div class="espresso-cup"><div class="coffee-swirl"></div><div class="cup-logo">ГОРЫ</div></div>
-  </div>
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">Гастрокофе · Белгород</p>
+<h1>ГОРЫ<span>.</span></h1>
+<div class="hero-lead">Кофе с характером.<br><em>Еда с настроением.</em></div>
+<p class="hero-description">Зерновой кофе, сочная шаурма, кебаб и любимые блюда на каждый день. Заходите за вкусом — оставайтесь за атмосферой.</p>
+<div class="hero-actions"><a class="button" href="#menu">Смотреть меню <span>↗</span></a><a class="quiet-link" href="#contacts">Как нас найти ↓</a></div>
+</div>
+<div class="hero-visual"><img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1800&q=90" alt="Обжаренные кофейные зёрна и свежий кофе"><div class="hero-caption">Свежий кофе каждый день<span>Отборное зерно · Честный вкус</span></div></div>
+<div class="scroll-cue">Вкус начинается здесь</div>
 </section>
-
-<section class="intro"><div class="reveal"><p class="section-tag">Больше, чем просто кофе</p><h2>Вкус — это<br><em>настроение.</em></h2></div><div class="reveal delay"><p class="intro-text">«ГОРЫ» — гастрокофе для тех, кто любит насыщенный кофе, щедрые начинки и простые вещи, сделанные с душой. Забежать за любимым напитком, устроить вкусный обед или взять что-то с собой — выбирай свой ритм.</p><div class="intro-sign">Увидимся в Горах.</div></div></section>
-<section class="menu" id="menu"><div class="menu-top reveal"><div><p class="section-tag">Собрали самое вкусное</p><h2>Меню с <em>характером.</em></h2></div><p>Яркие вкусы, качественные ингредиенты и еда, ради которой хочется вернуться.</p></div><div class="food-grid">
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=90" alt="Шаурма с сочной начинкой"><div class="food-info"><small>01 / STREET FOOD</small><h3>Шаурма<br>и кебаб</h3><p>Сочно. Ярко. Сытно.</p></div></article>
-<article class="food-card reveal delay"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="Кофе в чашке"><div class="food-info"><small>02 / COFFEE</small><h3>Зерновой кофе</h3><p>Вкус с первого глотка</p></div></article>
-<article class="food-card reveal delay2"><img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=900&q=85" alt="Сэндвич с начинкой"><div class="food-info"><small>03 / SANDWICH</small><h3>Сэндвичи</h3><p>Горячие и хрустящие</p></div></article>
-<article class="food-card reveal"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85" alt="Десерт"><div class="food-info"><small>04 / SWEET</small><h3>Десерты</h3><p>Маленькая радость</p></div></article>
-<article class="food-card reveal delay"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="Свежая еда"><div class="food-info"><small>05 / FRESH</small><h3>Каждый день</h3><p>Свежесть в деталях</p></div></article>
-</div><div class="menu-foot"><span>GOOD INGREDIENTS · GOOD TASTE</span><span>БЕЛГОРОД · ГОРЫ</span></div></section>
-<section class="manifesto" id="about"><div class="manifesto-photo"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=90" alt="Атмосфера современного кафе"></div><div class="manifesto-copy reveal"><p class="section-tag">Наша философия</p><h2>Не нужно выбирать между <em>вкусно</em> и красиво.</h2><p>Мы верим, что хорошая еда не обязана быть сложной. Важны качественные продукты, внимание к деталям и настроение, с которым всё готовится. Именно за этим приходят в «ГОРЫ».</p><div class="stats"><div class="stat"><strong>01</strong><span>КАЧЕСТВО</span></div><div class="stat"><strong>02</strong><span>ВКУС</span></div><div class="stat"><strong>03</strong><span>АТМОСФЕРА</span></div></div></div></section>
-<section class="visit" id="contacts"><div class="visit-copy reveal"><p class="section-tag">Твой маршрут ведёт сюда</p><h2>До встречи<br>в <em>ГОРАХ.</em></h2><p>Заглядывай за кофе, вкусной едой и хорошим настроением. Мы ждём тебя!</p><a class="btn" href="https://yandex.ru/maps/?text=Белгород%2C%20Гражданский%20проспект%2C%205" target="_blank" rel="noreferrer">ПОСТРОИТЬ МАРШРУТ ↗</a></div><div class="visit-details reveal delay"><small>МЫ ЗДЕСЬ</small><h3>Белгород,<br>Гражданский пр-т, 5</h3><small>СЛЕДИ ЗА НАМИ</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">@go_gory_bgd ↗</a></h3></div></section>
-</main><footer><img class="footer-logo" src="assets/gory-logo.svg" alt="ГОРЫ — кофейня"><span>Кофе с характером. Еда с настроением.</span><a href="#top">НАВЕРХ ↑</a><small>© ГОРЫ, 2026</small></footer>
+<div class="intro-strip"><span>Качественное зерно</span><b>✳</b><span>Свежие ингредиенты</span><b>✳</b><span>Готовим с душой</span><b>✳</b><span>Белгород · ГОРЫ</span></div>
+<section class="section menu-section" id="menu">
+<div class="section-head fade-up"><div><p class="section-label">Выбирайте своё</p><h2 class="section-title">Вкус, к которому<br>возвращаются<span>.</span></h2></div><p class="section-intro">От первого утреннего кофе до сытного обеда — всё, чтобы день стал немного лучше.</p></div>
+<div class="menu-grid">
+<article class="menu-card fade-up"><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=90" alt="Шаурма с сочной начинкой"><div class="menu-card-copy"><small>01 / Street food</small><h3>Шаурма<br>и кебаб</h3><p>Сочно, щедро, с характером</p></div></article>
+<article class="menu-card fade-up"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="Чашка зернового кофе"><div class="menu-card-copy"><small>02 / Coffee</small><h3>Зерновой кофе</h3></div></article>
+<article class="menu-card fade-up"><img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=900&q=85" alt="Свежий сэндвич"><div class="menu-card-copy"><small>03 / Fresh</small><h3>Сэндвичи</h3></div></article>
+<article class="menu-card fade-up"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85" alt="Десерт"><div class="menu-card-copy"><small>04 / Sweet</small><h3>Десерты</h3></div></article>
+<article class="menu-card fade-up"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="Свежие блюда"><div class="menu-card-copy"><small>05 / Every day</small><h3>И ещё вкусное</h3></div></article>
+</div>
+</section>
+<section class="coffee-feature" id="coffee">
+<div class="coffee-photo"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1400&q=90" alt="Приготовление свежего кофе"></div>
+<div class="coffee-copy fade-up"><p class="section-label">Кофе — наша любовь</p><h2>Начинается<br>с <em>аромата.</em></h2><p>Хороший кофе — это качественное зерно, точность приготовления и тот самый вкус, ради которого хочется сделать ещё один глоток. Загляните за своей чашкой в «ГОРЫ».</p><span class="coffee-note">Freshly brewed · Every day</span></div>
+</section>
+<section class="section about-section" id="about">
+<div class="fade-up"><p class="section-label">Наша философия</p><h2 class="section-title">Просто.<br>Честно.<br><em>Вкусно.</em></h2></div>
+<div class="about-copy fade-up">«ГОРЫ» — гастрокофе для тех, кто ценит хороший кофе и еду, приготовленную с вниманием. Мы любим понятные продукты, выразительные вкусы и атмосферу, в которой комфортно встречаться, отдыхать и брать любимое с собой.<div class="about-sign">До встречи в Горах.</div></div>
+</section>
+<section class="section visit-section" id="contacts">
+<div class="fade-up"><p class="section-label">Заглядывайте в гости</p><h2 class="section-title">Увидимся<br>в <em>ГОРАХ.</em></h2><p class="visit-copy">Кофе, еда и немного времени для себя. Будем рады видеть вас!</p><a class="button" href="https://yandex.ru/maps/?text=Белгород%2C%20Гражданский%20проспект%2C%205" target="_blank" rel="noreferrer">Построить маршрут ↗</a></div>
+<div class="visit-info fade-up"><small>Наш адрес</small><h3>Белгород,<br>Гражданский пр-т, 5</h3><small>Мы в Instagram</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noreferrer">@go_gory_bgd ↗</a></h3></div>
+</section>
+</main>
+<footer class="footer"><img class="footer-brand" src="assets/gory-logo.svg" alt="ГОРЫ"><span>Кофе с характером. Еда с настроением.</span><a href="#top">Наверх ↑</a><small>© ГОРЫ · 2026</small></footer>
 <script>
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.14});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const glow=document.querySelector('.cursor-glow');if(matchMedia('(pointer:fine)').matches){addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'})}else{glow.remove()}
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 </script>
-</body></html>
+</body>
+</html>
