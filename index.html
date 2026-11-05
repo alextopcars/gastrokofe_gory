@@ -90,6 +90,40 @@ img{display:block;max-width:100%}
 @media(max-width:900px){.site-header{padding:0 5%;height:76px}.nav{gap:20px}.address-mini{display:none}.hero{grid-template-columns:48% 52%;min-height:620px}.hero-copy{padding:80px 7% 75px 11%}.hero-visual{min-height:620px}.section{padding:85px 7%}.menu-grid{grid-template-rows:220px 220px}.coffee-copy{padding:65px 9%}.about-section{gap:7%}}
 @media(max-width:620px){.site-header{height:70px}.brand{width:92px}.nav{display:none}.header-right{gap:0}.social-link{font-size:8px}.hero{display:flex;flex-direction:column;min-height:0}.hero-copy{padding:92px 7% 48px;min-height:510px}.hero h1{font-size:clamp(82px,22vw,118px);margin:28px 0 20px}.hero-lead{font-size:27px}.hero-description{font-size:11px;margin:20px 0 25px}.hero-visual{min-height:390px;height:390px}.hero-caption{right:7%;bottom:7%}.scroll-cue{display:none}.intro-strip{padding:17px 6%;gap:12px;flex-wrap:wrap}.intro-strip span{font-size:8px}.section{padding:75px 6%}.section-head{display:block;margin-bottom:30px}.section-intro{margin-top:17px}.menu-grid{grid-template-columns:1fr 1fr;grid-template-rows:280px 180px 180px;gap:9px}.menu-card:first-child{grid-column:span 2;grid-row:auto}.menu-card-copy{left:14px;bottom:14px}.menu-card-copy h3{font-size:21px}.menu-card:first-child .menu-card-copy h3{font-size:30px}.menu-card-copy p{font-size:8px}.coffee-feature{grid-template-columns:1fr}.coffee-photo{min-height:330px;height:330px}.coffee-copy{padding:62px 7% 70px}.coffee-copy h2{font-size:56px}.about-section{grid-template-columns:1fr;gap:22px}.visit-section{grid-template-columns:1fr;gap:25px}.visit-info{border-left:0;border-top:1px solid #c6b99f;padding:24px 0 0}.footer{flex-wrap:wrap;padding:25px 6%}.footer span{width:calc(100% - 115px)}.footer small{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fade-up{opacity:1;transform:none}}
+
+/* Cinematic hero video — warm milk / espresso identity */
+.hero{background:var(--paper);color:var(--ink);grid-template-columns:43% 57%;min-height:680px}
+.hero-copy{padding:95px 7% 90px 16%;background:var(--paper)}
+.hero h1{color:var(--olive);font-size:clamp(82px,9vw,128px);letter-spacing:-.075em}
+.hero h1 span{color:var(--gold)}
+.hero-lead{color:var(--olive);font-size:clamp(25px,2.6vw,36px)}
+.hero-lead em{color:var(--gold)}
+.hero-description{color:#73776c;max-width:370px}
+.hero .eyebrow{color:var(--gold)}
+.hero .button{background:var(--olive);color:#f8f4ea}
+.hero .button:hover{background:#3c5944}
+.hero .quiet-link{color:var(--olive)}
+.hero-visual.hero-video-wrap{min-height:680px;background:#211a13;isolation:isolate}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block}
+.video-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#211a1318,transparent 30%),linear-gradient(0deg,#17130d78,transparent 34%)}
+.hero-video-wrap:after{display:none}
+.hero-caption{z-index:2;right:8%;bottom:8%;font-size:9px;letter-spacing:.19em}
+.hero-caption span{color:#e4c79b}
+.video-progress{position:absolute;z-index:3;bottom:0;left:0;height:3px;width:100%;background:#ffffff26;overflow:hidden}
+.video-progress:after{content:"";display:block;height:100%;width:35%;background:#c5a477;animation:videoSweep 4.32s linear infinite}
+@keyframes videoSweep{from{transform:translateX(-110%)}to{transform:translateX(310%)}}
+@media(max-width:900px){.hero{grid-template-columns:44% 56%;min-height:600px}.hero-copy{padding:80px 6% 75px 10%}.hero-visual.hero-video-wrap{min-height:600px}}
+@media(max-width:620px){
+.hero{display:flex;flex-direction:column;min-height:0}
+.hero-copy{padding:74px 7% 42px;min-height:0}
+.hero h1{font-size:clamp(82px,22vw,118px);margin:24px 0 18px}
+.hero-lead{font-size:27px}
+.hero-visual.hero-video-wrap{height:auto;min-height:0;aspect-ratio:9/16;max-height:590px}
+.hero-video{object-position:center center}
+.hero-caption{right:7%;bottom:8%;font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){.video-progress:after{animation:none}}
+
 </style>
 </head>
 <body>
@@ -107,7 +141,7 @@ img{display:block;max-width:100%}
 <p class="hero-description">Зерновой кофе, сочная шаурма, кебаб и любимые блюда на каждый день. Заходите за вкусом — оставайтесь за атмосферой.</p>
 <div class="hero-actions"><a class="button" href="#menu">Смотреть меню <span>↗</span></a><a class="quiet-link" href="#contacts">Как нас найти ↓</a></div>
 </div>
-<div class="hero-visual"><img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1800&q=90" alt="Обжаренные кофейные зёрна и свежий кофе"><div class="hero-caption">Свежий кофе каждый день<span>Отборное зерно · Честный вкус</span></div></div>
+<div class="hero-visual hero-video-wrap"><video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1200&q=85" aria-label="Кинематографичное макровидео кофейного зерна"><source src="assets/gory-coffee.mp4" type="video/mp4"></video><div class="video-shade"></div><div class="hero-caption">От зерна — к любимому кофе<span>Гастрокофе «ГОРЫ» · Белгород</span></div><span class="video-progress" aria-hidden="true"></span></div>
 <div class="scroll-cue">Вкус начинается здесь</div>
 </section>
 <div class="intro-strip"><span>Качественное зерно</span><b>✳</b><span>Свежие ингредиенты</span><b>✳</b><span>Готовим с душой</span><b>✳</b><span>Белгород · ГОРЫ</span></div>
