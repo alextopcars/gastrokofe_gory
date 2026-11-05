@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 230" role="img" aria-labelledby="title desc">
+<title id="title">ГОРЫ — кофейня</title><desc id="desc">Логотип с силуэтом гор и надписью ГОРЫ, КОФЕЙНЯ</desc>
+<g fill="none" stroke="#203b2e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M54 82 133 22l42 38 40-48 80 82-54-42-26 21-40-34-40 44-30-23z"/>
+<path d="m175 60 20-27 23 27"/>
+</g>
+<text x="260" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="91" letter-spacing="7" fill="#203b2e">ГОРЫ</text>
+<text x="260" y="204" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" letter-spacing="17" fill="#203b2e">КОФЕЙНЯ</text>
+</svg>
