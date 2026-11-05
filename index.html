@@ -49,12 +49,29 @@
     .top-contact { border-bottom: 1px solid var(--sand); padding: 0 0 7px; }
     .hero {
       min-height: min(900px, 100svh); padding-top: 86px;
-      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+      display: block; position: relative; overflow: hidden; isolation: isolate;
       background: var(--milk);
     }
+    .hero > .video-pane {
+      position: absolute; inset: 0; z-index: 0;
+      min-height: 0; width: 100%; height: 100%;
+    }
+    .hero > .video-pane .section-video {
+      object-fit: cover; object-position: center 48%;
+    }
+    .hero > .video-pane .video-shade {
+      background: linear-gradient(90deg,
+        rgba(244,240,231,.98) 0%,
+        rgba(244,240,231,.94) 32%,
+        rgba(244,240,231,.72) 53%,
+        rgba(24,35,27,.15) 100%);
+    }
     .hero-copy {
-      padding: clamp(76px, 10vw, 140px) 8% 70px 13.5%;
-      display: flex; flex-direction: column; justify-content: center; position: relative;
+      min-height: min(900px, 100svh);
+      width: min(64%, 850px);
+      padding: clamp(110px, 11vw, 155px) 6% 80px 13.5%;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 2;
     }
     .kicker, .label {
       display: flex; align-items: center; gap: 13px;
@@ -92,10 +109,33 @@
     .video-caption { position: absolute; right: 7%; bottom: 7%; color: #fff9ef; text-align: right; font-size: 8px; letter-spacing: .2em; text-transform: uppercase; text-shadow: 0 2px 15px #000; }
     .video-caption span { display: block; margin-top: 8px; color: #d4b184; }
     .menu-section {
-      position: relative; display: grid; grid-template-columns: .9fr 1.1fr;
-      min-height: 620px; overflow: hidden; background: var(--paper); isolation: isolate;
+      position: relative; display: block; min-height: 680px;
+      overflow: hidden; background: var(--forest-deep); isolation: isolate;
     }
-    .menu-visual { min-height: 620px; }
+    .menu-visual {
+      position: absolute; inset: 0; z-index: -1;
+      min-height: 0; width: 100%; height: 100%;
+    }
+    .menu-visual .section-video { object-fit: cover; object-position: center 50%; }
+    .menu-visual:after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(12,25,17,.88), rgba(12,25,17,.7) 56%, rgba(12,25,17,.47));
+    }
+    .menu-visual-copy { display: none; }
+    .menu-content {
+      position: relative; z-index: 2; max-width: 900px;
+      padding: clamp(90px, 10vw, 138px) 9%;
+      color: #f7f2e9;
+    }
+    .menu-content .label { color: #d4b184; }
+    .menu-content h2 { color: #f7f2e9; }
+    .menu-content h2 em { color: #d4b184; }
+    .menu-content .section-copy { color: rgba(247,242,233,.78); }
+    .menu-list { border-color: rgba(247,242,233,.28); }
+    .menu-row { border-color: rgba(247,242,233,.28); }
+    .menu-row strong { color: #f7f2e9; }
+    .menu-row span { color: #d4b184; }
+    .menu-footnote { color: rgba(247,242,233,.68); }
     .menu-visual .section-video { object-position: center; }
     .menu-visual:after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(17,31,22,.56), rgba(17,31,22,.08)); }
     .menu-visual-copy { position: absolute; z-index: 2; left: 9%; right: 8%; bottom: 9%; color: white; }
@@ -115,8 +155,13 @@
       gap: 10%; align-items: center; padding: 90px 9%;
       color: #f5f0e6; background: var(--forest-deep); overflow: hidden; isolation: isolate;
     }
-    .contact-section .section-video { object-position: center 54%; opacity: .52; }
-    .contact-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(13,28,19,.88), rgba(13,28,19,.66)); }
+    .contact-section .section-video {
+      object-fit: cover; object-position: center 52%; opacity: .68; z-index: -2;
+    }
+    .contact-shade {
+      position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(90deg, rgba(13,28,19,.84), rgba(13,28,19,.62));
+    }
     .contact-copy, .contact-details { position: relative; z-index: 1; }
     .contact-section .label { color: #d4b184; }
     .contact-section h2 { margin: 18px 0 26px; color: #f5f0e6; font: 500 clamp(58px, 7vw, 92px)/.9 var(--serif); letter-spacing: -.055em; }
@@ -126,7 +171,17 @@
     .contact-details small { color: #d4b184; font-size: 8px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
     .contact-details h3 { margin: 10px 0 25px; color: #f5f0e6; font: 500 26px/1.3 var(--serif); }
     .contact-details a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(212,177,132,.7); }
-    .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 7%; color: #d9dfd7; background: #122219; }
+    .footer {
+      position: relative; isolation: isolate; overflow: hidden;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 22px 7%; color: #d9dfd7; background: #122219;
+    }
+    .footer-video { object-fit: cover; object-position: center 54%; opacity: .38; z-index: -2; }
+    .footer:before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: rgba(10,22,15,.58);
+    }
+    .footer > *:not(video) { position: relative; z-index: 1; }
     .footer img { width: 58px; height: 58px; object-fit: contain; background: var(--milk); mix-blend-mode: normal; }
     .footer span, .footer small, .footer a { font-size: 9px; color: #c7d0c5; }
     .footer a { text-decoration: none; letter-spacing: .16em; text-transform: uppercase; }
@@ -145,19 +200,23 @@
       .nav { gap: 15px; }
       .nav a { font-size: 8px; letter-spacing: .1em; }
       .top-contact { display: none; }
-      .hero { min-height: 0; padding-top: 72px; display: flex; flex-direction: column; }
-      .hero-copy { min-height: 540px; padding: 64px 7% 72px; }
+      .hero { min-height: 720px; padding-top: 72px; display: block; }
+      .hero > .video-pane { position: absolute; inset: 0; height: 100%; width: 100%; }
+      .hero > .video-pane .video-shade {
+        background: linear-gradient(90deg, rgba(244,240,231,.97), rgba(244,240,231,.84) 55%, rgba(20,31,24,.24));
+      }
+      .hero-copy { width: min(92%, 560px); min-height: 720px; padding: 85px 7% 76px; }
       h1 { font-size: clamp(90px, 24vw, 132px); margin: 28px 0 22px; }
       .tagline { font-size: 30px; }
       .hero-description { font-size: 11px; margin: 20px 0 27px; }
       .hero-foot { left: 7%; bottom: 22px; }
-      .video-pane { min-height: 0; aspect-ratio: 9 / 12; }
-      .hero-video { object-position: center; }
-      .menu-section { grid-template-columns: 1fr; }
-      .menu-visual { min-height: 0; aspect-ratio: 4 / 3; }
-      .menu-visual-copy { left: 7%; bottom: 8%; }
-      .menu-visual-copy h2 { font-size: 48px; }
-      .menu-content { padding: 62px 7% 72px; }
+      .video-pane { min-height: 0; }
+      .hero-video { object-position: center 50%; }
+      .menu-section { display: block; min-height: 0; }
+      .menu-visual { position: absolute; inset: 0; min-height: 0; width: 100%; height: 100%; }
+      .menu-visual .section-video { object-position: center 50%; }
+      .menu-content { padding: 72px 7% 78px; }
+      .menu-content h2 { font-size: 56px; }
       .menu-content h2 { font-size: 56px; }
       .menu-row strong { font-size: 22px; }
       .contact-section { min-height: 0; grid-template-columns: 1fr; gap: 32px; padding: 74px 7% 68px; }
@@ -198,7 +257,7 @@
     </div>
     <div class="video-pane">
       <video class="section-video hero-video" data-video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" aria-label="Видео кофейного зерна">
-        <source src="assets/gory-coffee.mp4" type="video/mp4">
+        <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
       </video>
       <div class="video-shade"></div>
       <div class="video-caption">От зерна — к любимому кофе<span>Гастрокофе «ГОРЫ» · Белгород</span></div>
@@ -208,7 +267,7 @@
   <section class="menu-section" id="menu">
     <div class="video-pane menu-visual">
       <video class="section-video" data-video muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" aria-hidden="true">
-        <source src="assets/gory-coffee.mp4" type="video/mp4">
+        <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
       </video>
       <div class="video-shade"></div>
       <div class="menu-visual-copy"><small>Меню «ГОРЫ»</small><h2>Хороший вкус<br>без лишних слов.</h2></div>
@@ -229,7 +288,7 @@
 
   <section class="contact-section" id="contacts">
     <video class="section-video" data-video muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" aria-hidden="true">
-      <source src="assets/gory-coffee.mp4" type="video/mp4">
+      <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
     </video>
     <div class="contact-shade"></div>
     <div class="contact-copy reveal">
@@ -246,6 +305,9 @@
   </section>
 </main>
 <footer class="footer">
+  <video class="section-video footer-video" data-video muted loop playsinline preload="none" aria-hidden="true">
+    <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
+  </video>
   <img src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Логотип Гастрокофе ГОРЫ">
   <span>Выше суеты. Ближе к вкусу.</span>
   <a href="#top">Наверх ↑</a>
