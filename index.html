@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f0e7">
+  <meta name="theme-color" content="#17241b">
   <meta name="description" content="Гастрокофе ГОРЫ в Белгороде: зерновой кофе, шаурма, кебаб, сэндвичи, завтраки и десерты.">
   <meta property="og:title" content="ГОРЫ — гастрокофе · Белгород">
   <meta property="og:description" content="Выше суеты. Ближе к вкусу. Кофе, кухня и впечатления в гастрокофе ГОРЫ.">
@@ -12,350 +12,355 @@
   <title>ГОРЫ — гастрокофе · Белгород</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://static.wixstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --milk: #f4f0e7;
-      --paper: #fbf9f3;
-      --forest: #20382c;
-      --forest-deep: #16271e;
-      --sand: #c8a77b;
-      --ink: #222c25;
-      --muted: #777b70;
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "Manrope", "DM Sans", Arial, sans-serif;
+      --cream: #f3eee4;
+      --cream-soft: rgba(247, 242, 233, .92);
+      --forest: #1d3024;
+      --forest-deep: #142219;
+      --gold: #c5a174;
+      --gold-light: #dfc49f;
+      --text: #f8f3e9;
+      --muted-light: rgba(248, 243, 233, .75);
+      --ink: #26352a;
+      --muted: #74776d;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Onest", Arial, sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
-    body { margin: 0; color: var(--ink); background: var(--milk); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0; min-height: 100vh; isolation: isolate; overflow-x: hidden;
+      background: var(--forest-deep); color: var(--text); font-family: var(--sans);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
     a { color: inherit; }
     img, video { display: block; max-width: 100%; }
-    .topbar {
-      height: 86px; position: absolute; inset: 0 0 auto; z-index: 20;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6.5%; color: var(--forest);
-      border-bottom: 1px solid rgba(32,56,44,.12);
-      background: rgba(244,240,231,.88); backdrop-filter: blur(16px);
+    .site-video {
+      position: fixed; inset: 0; z-index: -2; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 48%;
+      background: #17241b; transform: scale(1.015);
+      filter: saturate(.82) contrast(1.06) brightness(.82);
     }
-    .brand-link { display: inline-flex; align-items: center; }
-    .brand-logo { width: 76px; height: 76px; object-fit: contain; mix-blend-mode: multiply; }
-    .nav { display: flex; align-items: center; gap: 38px; }
+    .site-video-wash {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(12, 23, 16, .38), rgba(12, 23, 16, .22) 54%, rgba(12, 23, 16, .4)),
+        linear-gradient(180deg, rgba(10, 19, 13, .22), rgba(10, 19, 13, .42));
+    }
+    .topbar {
+      position: sticky; top: 0; z-index: 30; height: 88px;
+      display: flex; align-items: center; justify-content: space-between; gap: 25px;
+      padding: 0 clamp(22px, 6.5vw, 100px);
+      color: var(--ink); background: rgba(244, 239, 229, .9);
+      border-bottom: 1px solid rgba(36, 48, 38, .11);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    }
+    .brand-link { display: inline-flex; align-items: center; flex: 0 0 auto; }
+    .brand-logo { width: 78px; height: 78px; object-fit: contain; mix-blend-mode: multiply; }
+    .nav { display: flex; align-items: center; gap: clamp(20px, 3.3vw, 48px); }
     .nav a, .top-contact {
       text-decoration: none; font-size: 9px; font-weight: 800;
       letter-spacing: .17em; text-transform: uppercase;
     }
     .nav a { color: #596457; transition: color .2s; }
     .nav a:hover { color: #a47d4d; }
-    .top-contact { border-bottom: 1px solid var(--sand); padding: 0 0 7px; }
+    .top-contact {
+      color: var(--forest); border-bottom: 1px solid var(--gold);
+      padding: 0 0 7px; white-space: nowrap;
+    }
+
     .hero {
-      min-height: min(900px, 100svh); padding-top: 86px;
-      display: block; position: relative; overflow: hidden; isolation: isolate;
-      background: var(--milk);
+      min-height: min(900px, calc(100svh - 88px));
+      display: flex; align-items: center;
+      padding: clamp(58px, 8vw, 112px) clamp(22px, 7vw, 106px);
     }
-    .hero > .video-pane {
-      position: absolute; inset: 0; z-index: 0;
-      min-height: 0; width: 100%; height: 100%;
-    }
-    .hero > .video-pane .section-video {
-      object-fit: cover; object-position: center 48%;
-    }
-    .hero > .video-pane .video-shade {
-      background: linear-gradient(90deg,
-        rgba(244,240,231,.98) 0%,
-        rgba(244,240,231,.94) 32%,
-        rgba(244,240,231,.72) 53%,
-        rgba(24,35,27,.15) 100%);
-    }
-    .hero-copy {
-      min-height: min(900px, 100svh);
-      width: min(64%, 850px);
-      padding: clamp(110px, 11vw, 155px) 6% 80px 13.5%;
-      display: flex; flex-direction: column; justify-content: center;
-      position: relative; z-index: 2;
+    .hero-panel {
+      width: min(760px, 72vw); position: relative;
+      padding: clamp(38px, 5.5vw, 76px) clamp(30px, 5.2vw, 72px);
+      color: var(--ink); background: var(--cream-soft);
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 24px 80px rgba(0,0,0,.17);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
     }
     .kicker, .label {
       display: flex; align-items: center; gap: 13px;
-      color: #9b7950; font-size: 9px; font-weight: 800;
+      margin: 0; color: #9b7950; font-size: 9px; font-weight: 800;
       letter-spacing: .24em; text-transform: uppercase;
     }
     .kicker:before { content: ""; width: 31px; height: 1px; background: currentColor; }
     h1 {
-      margin: 35px 0 25px; color: var(--forest);
-      font: 500 clamp(82px, 10vw, 150px)/.83 var(--serif);
+      margin: 28px 0 16px; color: var(--forest);
+      font: 500 clamp(104px, 14vw, 190px)/.72 var(--serif);
       letter-spacing: -.075em;
     }
-    h1 span { color: var(--sand); }
-    .tagline { color: var(--forest); font: 500 clamp(26px, 3vw, 42px)/1.15 var(--serif); letter-spacing: -.025em; }
-    .tagline em { color: #a78358; }
-    .hero-description, .section-copy {
-      max-width: 410px; margin: 24px 0 32px; color: #72776d;
-      font-size: 12px; line-height: 2;
+    h1 span { color: var(--gold); }
+    .hero-tagline {
+      margin: 0; color: var(--forest);
+      font: 500 clamp(30px, 4vw, 54px)/.98 var(--serif);
+      letter-spacing: -.025em;
+    }
+    .hero-tagline em { color: #9a754c; }
+    .hero-description {
+      max-width: 480px; margin: 25px 0 32px; color: #646d62;
+      font-size: 12px; line-height: 1.95;
     }
     .actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
     .btn {
-      min-height: 52px; padding: 0 23px; background: var(--forest); color: white;
-      display: inline-flex; align-items: center; justify-content: center; gap: 25px;
+      min-height: 54px; padding: 0 25px; background: var(--forest); color: white;
+      display: inline-flex; align-items: center; justify-content: center; gap: 26px;
       text-decoration: none; font-size: 9px; font-weight: 800;
       letter-spacing: .16em; text-transform: uppercase;
-      transition: background .25s, transform .25s;
+      transition: background .25s, transform .25s, box-shadow .25s;
     }
-    .btn:hover { background: #3a5943; transform: translateY(-2px); }
-    .underlink { color: var(--forest); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--sand); padding-bottom: 7px; }
-    .hero-foot { position: absolute; left: 13.5%; bottom: 34px; color: #969487; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; }
-    .video-pane { position: relative; min-width: 0; overflow: hidden; isolation: isolate; background: var(--forest-deep); }
-    .section-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero-video { object-position: center; opacity: .92; }
-    .video-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,24,18,.04), rgba(14,24,18,.44)); pointer-events: none; }
-    .video-caption { position: absolute; right: 7%; bottom: 7%; color: #fff9ef; text-align: right; font-size: 8px; letter-spacing: .2em; text-transform: uppercase; text-shadow: 0 2px 15px #000; }
-    .video-caption span { display: block; margin-top: 8px; color: #d4b184; }
+    .btn:hover { background: #38543f; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(23,43,29,.2); }
+    .underlink {
+      color: var(--forest); font-size: 9px; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 7px;
+    }
+    .hero-foot {
+      position: absolute; left: clamp(22px, 7vw, 106px); bottom: 24px;
+      color: rgba(248,243,233,.78); font-size: 8px;
+      letter-spacing: .2em; text-transform: uppercase;
+      text-shadow: 0 1px 9px rgba(0,0,0,.6);
+    }
+
     .menu-section {
-      position: relative; display: block; min-height: 680px;
-      overflow: hidden; background: var(--forest-deep); isolation: isolate;
+      min-height: 710px; display: flex; align-items: center; justify-content: flex-end;
+      padding: clamp(76px, 10vw, 138px) clamp(22px, 7vw, 106px);
+      position: relative;
     }
-    .menu-visual {
-      position: absolute; inset: 0; z-index: -1;
-      min-height: 0; width: 100%; height: 100%;
+    .menu-panel {
+      width: min(780px, 76vw); padding: clamp(36px, 5vw, 70px);
+      color: var(--text); background: rgba(18, 35, 24, .82);
+      border: 1px solid rgba(222, 196, 159, .3);
+      box-shadow: 0 24px 80px rgba(0,0,0,.22);
+      backdrop-filter: blur(17px); -webkit-backdrop-filter: blur(17px);
     }
-    .menu-visual .section-video { object-fit: cover; object-position: center 50%; }
-    .menu-visual:after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(90deg, rgba(12,25,17,.88), rgba(12,25,17,.7) 56%, rgba(12,25,17,.47));
+    .menu-panel .label { color: var(--gold-light); }
+    .menu-panel h2 {
+      margin: 17px 0 15px; color: var(--text);
+      font: 500 clamp(54px, 7vw, 90px)/.82 var(--serif);
+      letter-spacing: -.05em;
     }
-    .menu-visual-copy { display: none; }
-    .menu-content {
-      position: relative; z-index: 2; max-width: 900px;
-      padding: clamp(90px, 10vw, 138px) 9%;
-      color: #f7f2e9;
+    .menu-panel h2 em { color: var(--gold-light); }
+    .section-copy { max-width: 470px; margin: 0 0 28px; color: var(--muted-light); font-size: 12px; line-height: 1.9; }
+    .menu-list { border-top: 1px solid rgba(248,243,233,.25); margin: 12px 0 26px; }
+    .menu-row {
+      padding: 17px 0; border-bottom: 1px solid rgba(248,243,233,.22);
+      display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
     }
-    .menu-content .label { color: #d4b184; }
-    .menu-content h2 { color: #f7f2e9; }
-    .menu-content h2 em { color: #d4b184; }
-    .menu-content .section-copy { color: rgba(247,242,233,.78); }
-    .menu-list { border-color: rgba(247,242,233,.28); }
-    .menu-row { border-color: rgba(247,242,233,.28); }
-    .menu-row strong { color: #f7f2e9; }
-    .menu-row span { color: #d4b184; }
-    .menu-footnote { color: rgba(247,242,233,.68); }
-    .menu-visual .section-video { object-position: center; }
-    .menu-visual:after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(17,31,22,.56), rgba(17,31,22,.08)); }
-    .menu-visual-copy { position: absolute; z-index: 2; left: 9%; right: 8%; bottom: 9%; color: white; }
-    .menu-visual-copy small { color: #e2c49a; font-size: 8px; letter-spacing: .22em; text-transform: uppercase; }
-    .menu-visual-copy h2 { margin: 12px 0 0; font: 500 clamp(42px, 5vw, 70px)/.98 var(--serif); }
-    .menu-content { padding: clamp(66px, 8vw, 108px) 10%; display: flex; flex-direction: column; justify-content: center; }
-    .menu-content h2 { margin: 17px 0 15px; color: var(--forest); font: 500 clamp(46px, 5.3vw, 72px)/.98 var(--serif); letter-spacing: -.055em; }
-    .menu-content h2 em { color: #a78358; }
-    .menu-content .section-copy { margin: 0 0 24px; }
-    .menu-list { border-top: 1px solid #dcd5c7; margin: 12px 0 28px; }
-    .menu-row { padding: 15px 0; border-bottom: 1px solid #dcd5c7; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
-    .menu-row strong { font: 500 24px/1.1 var(--serif); color: var(--forest); }
-    .menu-row span { color: #9b7950; font-size: 8px; letter-spacing: .17em; text-transform: uppercase; white-space: nowrap; }
-    .menu-footnote { color: #8a877c; font-size: 10px; line-height: 1.7; }
+    .menu-row strong { color: var(--text); font: 500 clamp(22px, 2.4vw, 29px)/1.1 var(--serif); }
+    .menu-row span { color: var(--gold-light); font-size: 8px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+    .menu-footnote { color: rgba(248,243,233,.64); font-size: 10px; line-height: 1.7; }
+
     .contact-section {
-      min-height: 560px; position: relative; display: grid; grid-template-columns: 1fr .8fr;
-      gap: 10%; align-items: center; padding: 90px 9%;
-      color: #f5f0e6; background: var(--forest-deep); overflow: hidden; isolation: isolate;
+      min-height: 650px; padding: clamp(76px, 10vw, 130px) clamp(22px, 7vw, 106px);
+      display: grid; grid-template-columns: 1fr .82fr; align-items: center;
+      gap: clamp(28px, 7vw, 100px);
     }
-    .contact-section .section-video {
-      object-fit: cover; object-position: center 52%; opacity: .68; z-index: -2;
+    .contact-copy {
+      padding: clamp(34px, 5vw, 64px); color: var(--ink);
+      background: rgba(247,242,233,.92); border-left: 3px solid var(--gold);
+      box-shadow: 0 24px 80px rgba(0,0,0,.17);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
     }
-    .contact-shade {
-      position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(90deg, rgba(13,28,19,.84), rgba(13,28,19,.62));
+    .contact-copy .label { color: #9b7950; }
+    .contact-copy h2 {
+      margin: 18px 0 20px; color: var(--forest);
+      font: 500 clamp(58px, 7.3vw, 98px)/.82 var(--serif);
+      letter-spacing: -.055em;
     }
-    .contact-copy, .contact-details { position: relative; z-index: 1; }
-    .contact-section .label { color: #d4b184; }
-    .contact-section h2 { margin: 18px 0 26px; color: #f5f0e6; font: 500 clamp(58px, 7vw, 92px)/.9 var(--serif); letter-spacing: -.055em; }
-    .contact-section h2 em { color: #d4b184; }
-    .contact-copy p:not(.label) { max-width: 390px; color: rgba(245,240,230,.78); font-size: 12px; line-height: 2; }
-    .contact-details { border-left: 1px solid rgba(212,177,132,.55); padding: 12px 0 12px 34px; }
-    .contact-details small { color: #d4b184; font-size: 8px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
-    .contact-details h3 { margin: 10px 0 25px; color: #f5f0e6; font: 500 26px/1.3 var(--serif); }
+    .contact-copy h2 em { color: #9a754c; }
+    .contact-copy p:not(.label) { max-width: 390px; color: #687064; font-size: 12px; line-height: 1.9; margin: 0 0 28px; }
+    .contact-details {
+      padding: clamp(30px, 4vw, 52px); color: var(--text);
+      background: rgba(18, 35, 24, .82);
+      border: 1px solid rgba(222,196,159,.3);
+      box-shadow: 0 24px 80px rgba(0,0,0,.2);
+      backdrop-filter: blur(17px); -webkit-backdrop-filter: blur(17px);
+    }
+    .contact-details small {
+      color: var(--gold-light); font-size: 8px; font-weight: 800;
+      letter-spacing: .2em; text-transform: uppercase;
+    }
+    .contact-details h3 {
+      margin: 10px 0 27px; color: var(--text);
+      font: 500 clamp(24px, 2.5vw, 31px)/1.17 var(--serif);
+    }
+    .contact-details h3:last-child { margin-bottom: 0; }
     .contact-details a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(212,177,132,.7); }
+    .contact-details a:hover { color: var(--gold-light); }
+
     .footer {
-      position: relative; isolation: isolate; overflow: hidden;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 20px; padding: 22px 7%; color: #d9dfd7; background: #122219;
+      min-height: 105px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 19px clamp(22px, 7vw, 106px);
+      background: rgba(12, 25, 17, .76);
+      border-top: 1px solid rgba(222,196,159,.22);
+      backdrop-filter: blur(17px); -webkit-backdrop-filter: blur(17px);
     }
-    .footer-video { object-fit: cover; object-position: center 54%; opacity: .38; z-index: -2; }
-    .footer:before {
-      content: ""; position: absolute; inset: 0; z-index: -1;
-      background: rgba(10,22,15,.58);
-    }
-    .footer > *:not(video) { position: relative; z-index: 1; }
-    .footer img { width: 58px; height: 58px; object-fit: contain; background: var(--milk); mix-blend-mode: normal; }
-    .footer span, .footer small, .footer a { font-size: 9px; color: #c7d0c5; }
-    .footer a { text-decoration: none; letter-spacing: .16em; text-transform: uppercase; }
+    .footer img { width: 65px; height: 65px; object-fit: contain; background: var(--cream); }
+    .footer span, .footer small, .footer a { color: rgba(248,243,233,.82); font-size: 9px; }
+    .footer a { text-decoration: none; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .footer a:hover { color: var(--gold-light); }
+
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
     .reveal.visible { opacity: 1; transform: none; }
     @media (max-width: 900px) {
-      .topbar { padding: 0 5%; } .nav { gap: 22px; }
-      .hero-copy { padding-left: 9%; padding-right: 6%; }
-      .hero-foot { left: 9%; }
-      .menu-content { padding-left: 8%; padding-right: 8%; }
+      .topbar { padding: 0 5%; }
+      .hero { padding-left: 5%; padding-right: 5%; }
+      .hero-panel { width: min(730px, 86vw); }
+      .menu-section { padding-left: 5%; padding-right: 5%; }
+      .menu-panel { width: min(760px, 90vw); }
+      .contact-section { padding-left: 5%; padding-right: 5%; gap: 28px; }
     }
     @media (max-width: 650px) {
-      html { scroll-padding-top: 70px; }
-      .topbar { height: 72px; padding: 0 5%; }
-      .brand-logo { width: 64px; height: 64px; }
-      .nav { gap: 15px; }
+      html { scroll-padding-top: 72px; }
+      .topbar { height: 72px; padding: 0 5%; gap: 12px; }
+      .brand-logo { width: 62px; height: 62px; }
+      .nav { gap: 17px; }
       .nav a { font-size: 8px; letter-spacing: .1em; }
       .top-contact { display: none; }
-      .hero { min-height: 720px; padding-top: 72px; display: block; }
-      .hero > .video-pane { position: absolute; inset: 0; height: 100%; width: 100%; }
-      .hero > .video-pane .video-shade {
-        background: linear-gradient(90deg, rgba(244,240,231,.97), rgba(244,240,231,.84) 55%, rgba(20,31,24,.24));
-      }
-      .hero-copy { width: min(92%, 560px); min-height: 720px; padding: 85px 7% 76px; }
-      h1 { font-size: clamp(90px, 24vw, 132px); margin: 28px 0 22px; }
-      .tagline { font-size: 30px; }
-      .hero-description { font-size: 11px; margin: 20px 0 27px; }
-      .hero-foot { left: 7%; bottom: 22px; }
-      .video-pane { min-height: 0; }
-      .hero-video { object-position: center 50%; }
-      .menu-section { display: block; min-height: 0; }
-      .menu-visual { position: absolute; inset: 0; min-height: 0; width: 100%; height: 100%; }
-      .menu-visual .section-video { object-position: center 50%; }
-      .menu-content { padding: 72px 7% 78px; }
-      .menu-content h2 { font-size: 56px; }
-      .menu-content h2 { font-size: 56px; }
-      .menu-row strong { font-size: 22px; }
-      .contact-section { min-height: 0; grid-template-columns: 1fr; gap: 32px; padding: 74px 7% 68px; }
-      .contact-section h2 { font-size: 70px; }
-      .contact-details { border-left: 0; border-top: 1px solid rgba(212,177,132,.55); padding: 25px 0 0; }
-      .footer { flex-wrap: wrap; padding: 20px 6%; }
-      .footer span { width: calc(100% - 90px); }
+      .hero { min-height: 690px; padding: 54px 5% 68px; }
+      .hero-panel { width: 100%; padding: 37px 25px 40px; }
+      h1 { font-size: clamp(100px, 28vw, 142px); margin: 27px 0 15px; }
+      .hero-tagline { font-size: 34px; }
+      .hero-description { font-size: 11px; margin: 21px 0 26px; }
+      .hero-foot { left: 5%; bottom: 22px; font-size: 7px; }
+      .menu-section { min-height: 0; padding: 70px 5%; }
+      .menu-panel { width: 100%; padding: 35px 24px; }
+      .menu-panel h2 { font-size: 60px; }
+      .menu-row { gap: 12px; padding: 16px 0; }
+      .menu-row strong { font-size: 21px; }
+      .menu-row span { font-size: 7px; }
+      .contact-section { min-height: 0; grid-template-columns: 1fr; gap: 18px; padding: 70px 5%; }
+      .contact-copy, .contact-details { padding: 33px 25px; }
+      .contact-copy h2 { font-size: 71px; }
+      .contact-details h3 { font-size: 26px; }
+      .footer { flex-wrap: wrap; padding: 18px 5%; gap: 12px; }
+      .footer img { width: 54px; height: 54px; }
+      .footer span { flex: 1; min-width: 180px; }
       .footer small { width: 100%; }
+      .site-video { object-position: center 48%; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *:before, *:after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
-      .section-video { display: none; }
-      .video-pane, .menu-visual, .contact-section { background: #28392e; }
+      .site-video { display: none; }
+      .site-video-wash { background: radial-gradient(ellipse at center, #384638, #142219); }
     }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand-link" href="#top" aria-label="ГОРЫ — главная">
-    <img class="brand-logo" src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Оригинальный логотип Гастрокофе ГОРЫ">
-  </a>
-  <nav class="nav" aria-label="Главная навигация">
-    <a href="#menu">Меню</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
-  <a class="top-contact" href="tel:+79803842800">+7 (980) 384-28-00</a>
-</header>
-<main id="top">
-  <section class="hero" aria-label="Гастрокофе ГОРЫ">
-    <div class="hero-copy">
-      <p class="kicker">Гастрокофе · Белгород</p>
-      <h1>ГОРЫ<span>.</span></h1>
-      <div class="tagline">Выше суеты.<br><em>Ближе к вкусу.</em></div>
-      <p class="hero-description">Премиальный зерновой кофе, сочная шаурма, кебаб в лаваше, сэндвичи и десерты. Место, где можно выдохнуть и выбрать что-то по-настоящему вкусное.</p>
-      <div class="actions"><a class="btn" href="#menu">Смотреть меню <span>↗</span></a><a class="underlink" href="#contacts">Как нас найти</a></div>
-      <div class="hero-foot">Кофе · Еда · Впечатления</div>
-    </div>
-    <div class="video-pane">
-      <video class="section-video hero-video" data-video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" aria-label="Видео кофейного зерна">
-        <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
-      </video>
-      <div class="video-shade"></div>
-      <div class="video-caption">От зерна — к любимому кофе<span>Гастрокофе «ГОРЫ» · Белгород</span></div>
-    </div>
-  </section>
-
-  <section class="menu-section" id="menu">
-    <div class="video-pane menu-visual">
-      <video class="section-video" data-video muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" aria-hidden="true">
-        <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
-      </video>
-      <div class="video-shade"></div>
-      <div class="menu-visual-copy"><small>Меню «ГОРЫ»</small><h2>Хороший вкус<br>без лишних слов.</h2></div>
-    </div>
-    <div class="menu-content reveal">
-      <p class="label">Кофе · кухня · десерты</p>
-      <h2>Есть повод<br><em>зайти.</em></h2>
-      <p class="section-copy">От чашки зернового кофе до сытного обеда — выбирайте то, что подходит именно сегодня.</p>
-      <div class="menu-list">
-        <div class="menu-row"><strong>Шаурма и кебаб</strong><span>Сытно и сочно</span></div>
-        <div class="menu-row"><strong>Кофе и напитки</strong><span>Классика и любимое</span></div>
-        <div class="menu-row"><strong>Сэндвичи и завтраки</strong><span>На каждый день</span></div>
-        <div class="menu-row"><strong>Десерты</strong><span>К кофе</span></div>
-      </div>
-      <p class="menu-footnote">Актуальное наличие и состав блюд уточняйте у команды гастрокофе.</p>
-    </div>
-  </section>
-
-  <section class="contact-section" id="contacts">
-    <video class="section-video" data-video muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" aria-hidden="true">
-      <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
-    </video>
-    <div class="contact-shade"></div>
-    <div class="contact-copy reveal">
-      <p class="label">Будем рады видеть</p>
-      <h2>До встречи<br>в <em>ГОРАХ.</em></h2>
-      <p>Заглядывайте за любимым кофе, обедом или хорошим настроением.</p>
-      <a class="btn" href="https://yandex.ru/maps/org/gory/133866911303/?ll=36.602979%2C50.592956&z=17" target="_blank" rel="noopener noreferrer">Построить маршрут <span>↗</span></a>
-    </div>
-    <div class="contact-details reveal">
-      <small>Наш адрес</small><h3>Белгород,<br>Гражданский пр-т, 5</h3>
-      <small>Телефон</small><h3><a href="tel:+79803842800">+7 (980) 384-28-00</a></h3>
-      <small>Instagram</small><h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noopener noreferrer">@go_gory_bgd ↗</a></h3>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <video class="section-video footer-video" data-video muted loop playsinline preload="none" aria-hidden="true">
-    <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/da09db357e620f9a75d4974cf58f446a_720w.mp4?v=2" type="video/mp4">
+  <video class="site-video" id="site-video" autoplay muted loop playsinline webkit-playsinline preload="auto"
+    poster="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-coffee-poster.jpg"
+    aria-hidden="true">
+    <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-coffee-fullhd.mp4" type="video/mp4">
   </video>
-  <img src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Логотип Гастрокофе ГОРЫ">
-  <span>Выше суеты. Ближе к вкусу.</span>
-  <a href="#top">Наверх ↑</a>
-  <small>© Гастрокофе «ГОРЫ» · 2026</small>
-</footer>
-<script>
-(() => {
-  const revealItems = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealItems.forEach(item => revealObserver.observe(item));
-  } else {
-    revealItems.forEach(item => item.classList.add('visible'));
-  }
+  <div class="site-video-wash" aria-hidden="true"></div>
 
-  const videos = document.querySelectorAll('[data-video]');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) {
-    videos.forEach(video => video.pause());
-    return;
-  }
-  if ('IntersectionObserver' in window) {
-    const videoObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          const playResult = video.play();
-          if (playResult && playResult.catch) playResult.catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: 0.08 });
-    videos.forEach(video => videoObserver.observe(video));
-  } else {
-    videos.forEach(video => {
-      const playResult = video.play();
-      if (playResult && playResult.catch) playResult.catch(() => {});
-    });
-  }
-})();
-</script>
+  <header class="topbar">
+    <a class="brand-link" href="#top" aria-label="Гастрокофе ГОРЫ — главная">
+      <img class="brand-logo" src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Оригинальный логотип Гастрокофе ГОРЫ">
+    </a>
+    <nav class="nav" aria-label="Главная навигация">
+      <a href="#menu">Меню</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="top-contact" href="tel:+79803842800">+7 (980) 384-28-00</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Гастрокофе ГОРЫ">
+      <div class="hero-panel">
+        <p class="kicker">Гастрокофе · Белгород</p>
+        <h1>ГОРЫ<span>.</span></h1>
+        <p class="hero-tagline">Выше суеты.<br><em>Ближе к вкусу.</em></p>
+        <p class="hero-description">Премиальный зерновой кофе, сочная шаурма, кебаб в лаваше, сэндвичи и десерты. Место, где можно выдохнуть и выбрать что-то по-настоящему вкусное.</p>
+        <div class="actions">
+          <a class="btn" href="#menu">Смотреть меню <span>↗</span></a>
+          <a class="underlink" href="#contacts">Как нас найти</a>
+        </div>
+      </div>
+      <div class="hero-foot">Кофе · Еда · Впечатления</div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="menu-panel reveal">
+        <p class="label">Кофе · кухня · десерты</p>
+        <h2>Есть повод<br><em>зайти.</em></h2>
+        <p class="section-copy">От чашки зернового кофе до сытного обеда — выбирайте то, что подходит именно сегодня.</p>
+        <div class="menu-list">
+          <div class="menu-row"><strong>Шаурма и кебаб</strong><span>Сытно и сочно</span></div>
+          <div class="menu-row"><strong>Кофе и напитки</strong><span>Классика и любимое</span></div>
+          <div class="menu-row"><strong>Сэндвичи и завтраки</strong><span>На каждый день</span></div>
+          <div class="menu-row"><strong>Десерты</strong><span>К кофе</span></div>
+        </div>
+        <p class="menu-footnote">Актуальное наличие и состав блюд уточняйте у команды гастрокофе.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacts">
+      <div class="contact-copy reveal">
+        <p class="label">Будем рады видеть</p>
+        <h2>До встречи<br>в <em>ГОРАХ.</em></h2>
+        <p>Заглядывайте за любимым кофе, обедом или хорошим настроением.</p>
+        <a class="btn" href="https://yandex.ru/maps/org/gory/133866911303/?ll=36.602979%2C50.592956&z=17" target="_blank" rel="noopener noreferrer">Построить маршрут <span>↗</span></a>
+      </div>
+      <div class="contact-details reveal">
+        <small>Наш адрес</small>
+        <h3>Белгород,<br>Гражданский пр-т, 5</h3>
+        <small>Телефон</small>
+        <h3><a href="tel:+79803842800">+7 (980) 384-28-00</a></h3>
+        <small>Instagram</small>
+        <h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noopener noreferrer">@go_gory_bgd ↗</a></h3>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Логотип Гастрокофе ГОРЫ">
+    <span>Выше суеты. Ближе к вкусу.</span>
+    <a href="#top">Наверх ↑</a>
+    <small>© Гастрокофе «ГОРЫ» · 2026</small>
+  </footer>
+
+  <script>
+    (() => {
+      const revealItems = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealItems.forEach(item => revealObserver.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('visible'));
+      }
+
+      const video = document.getElementById('site-video');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (video && !reduceMotion) {
+        const playVideo = () => {
+          const result = video.play();
+          if (result && result.catch) result.catch(() => {});
+        };
+        if (document.visibilityState === 'visible') playVideo();
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) video.pause();
+          else playVideo();
+        });
+      } else if (video) {
+        video.pause();
+      }
+    })();
+  </script>
 </body>
 </html>
