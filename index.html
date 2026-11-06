@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://static.wixstatic.com">
+  <link rel="preload" as="image" href="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-shawarma-hero.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -80,6 +81,11 @@
     .footer a{text-decoration:none;letter-spacing:.15em;text-transform:uppercase}
 
     /* Variant 2 — cinematic scroll animation */
+    .scene-dissolve{position:fixed;inset:0;z-index:20;pointer-events:none;opacity:0;background:#201b14;overflow:hidden;will-change:opacity}
+    .scene-dissolve img{width:100%;height:100%;object-fit:cover;object-position:center 54%;transform:scale(1.08);filter:saturate(1.08) contrast(1.04)}
+    .scene-dissolve:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,22,15,.5),rgba(18,22,15,.08) 75%)}
+    .scene-dissolve-label{position:absolute;left:clamp(24px,10vw,150px);bottom:clamp(38px,8vh,90px);z-index:1;color:#fff8ed;font:500 clamp(48px,8vw,100px)/.85 var(--serif);letter-spacing:-.04em;opacity:0;transform:translateY(18px)}
+    .scene-dissolve.active .scene-dissolve-label{opacity:1;transform:none;transition:opacity .35s ease,transform .45s ease}
     .motion-progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:60;pointer-events:none;background:rgba(201,167,122,.18)}
     .motion-progress span{display:block;width:100%;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left center}
     .header{transition:background .35s ease,box-shadow .35s ease}
@@ -165,6 +171,10 @@
   </style>
 </head>
 <body>
+  <div class="scene-dissolve" id="scene-dissolve" aria-hidden="true">
+    <img src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-shawarma-hero.jpg" alt="">
+    <div class="scene-dissolve-label">А теперь —<br>что-то сытное.</div>
+  </div>
   <div class="motion-progress" aria-hidden="true"><span id="motion-progress-bar"></span></div>
   <header class="header">
     <a class="logo-link" href="#top" aria-label="Гастрокофе ГОРЫ — главная">
@@ -197,7 +207,7 @@
     </section>
 
     <section class="shawarma" id="menu" aria-label="Шаурма и кухня ГОРЫ">
-      <img class="shawarma-image" src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-shawarma-hero.jpg" alt="Шаурма с мясом, овощами и соусом" loading="lazy">
+      <img class="shawarma-image" src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-shawarma-hero.jpg" alt="Шаурма с мясом, овощами и соусом" loading="eager" fetchpriority="high">
       <div class="shawarma-content reveal">
         <p class="eyebrow">Когда хочется основательно</p>
         <h2>Шаурма.</h2>
@@ -235,12 +245,28 @@
       document.documentElement.classList.add('js');
       const header = document.querySelector('.header');
       const progressBar = document.getElementById('motion-progress-bar');
+      const dissolve = document.getElementById('scene-dissolve');
+      const hero = document.querySelector('.hero');
+      const menuSection = document.querySelector('.shawarma');
       let scrollTicking = false;
       const updateScrollMotion = () => {
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
         if (progressBar) progressBar.style.transform = 'scaleX(' + progress + ')';
         if (header) header.classList.toggle('scrolled', window.scrollY > 24);
+        if (dissolve && hero && menuSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          const start = hero.offsetTop + hero.offsetHeight - window.innerHeight * .82;
+          const end = hero.offsetTop + hero.offsetHeight + window.innerHeight * .42;
+          const raw = (window.scrollY - start) / Math.max(1, end - start);
+          const t = Math.max(0, Math.min(1, raw));
+          const opacity = Math.sin(t * Math.PI);
+          dissolve.style.opacity = String(opacity * .94);
+          dissolve.classList.toggle('active', t > .28 && t < .78);
+          const img = dissolve.querySelector('img');
+          if (img) img.style.transform = 'scale(' + (1.08 - t * .08) + ')';
+        } else if (dissolve) {
+          dissolve.style.opacity = '0';
+        }
         scrollTicking = false;
       };
       window.addEventListener('scroll', () => {
@@ -271,6 +297,7 @@
       }
       const video = document.getElementById('coffee-video');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion && dissolve) dissolve.remove();
       if (video && !reduceMotion) {
         const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
         play();
