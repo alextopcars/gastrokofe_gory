@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#17241b">
-  <meta name="description" content="Гастрокофе ГОРЫ в Белгороде: зерновой кофе, шаурма, кебаб, сэндвичи, завтраки и десерты.">
-  <meta property="og:title" content="ГОРЫ — гастрокофе · Белгород">
-  <meta property="og:description" content="Выше суеты. Ближе к вкусу. Кофе, кухня и впечатления в гастрокофе ГОРЫ.">
+  <meta name="theme-color" content="#f2eee5">
+  <meta name="description" content="Гастрокофе ГОРЫ в Белгороде. Кофе, шаурма, кебаб, сэндвичи и завтраки.">
+  <meta property="og:title" content="ГОРЫ — гастрокофе">
+  <meta property="og:description" content="Выше суеты. Ближе к вкусу. Кофе и кухня в одном месте.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <title>ГОРЫ — гастрокофе · Белгород</title>
@@ -15,306 +15,168 @@
   <link rel="preconnect" href="https://static.wixstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --cream: #f3eee4;
-      --cream-soft: rgba(247, 242, 233, .92);
-      --forest: #1d3024;
-      --forest-deep: #142219;
-      --gold: #c5a174;
-      --gold-light: #dfc49f;
-      --text: #f8f3e9;
-      --muted-light: rgba(248, 243, 233, .75);
-      --ink: #26352a;
-      --muted: #74776d;
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Onest", Arial, sans-serif;
+    :root{
+      --cream:#f2eee5;--paper:#faf8f2;--ink:#26372b;--forest:#20392b;
+      --gold:#c9a77a;--muted:#74766e;--serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"Onest",Arial,sans-serif;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body {
-      margin: 0; min-height: 100vh; isolation: isolate; overflow-x: hidden;
-      background: var(--forest-deep); color: var(--text); font-family: var(--sans);
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; }
-    img, video { display: block; max-width: 100%; }
-    .site-video {
-      position: fixed; inset: 0; z-index: -2; width: 100%; height: 100%;
-      object-fit: cover; object-position: center 48%;
-      background: #17241b; transform: scale(1.015);
-      filter: saturate(.94) contrast(1.02) brightness(1.08);
-    }
-    .site-video-wash {
-      position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background: rgba(12, 23, 16, .06);
-    }
-    .topbar {
-      position: sticky; top: 0; z-index: 30; height: 88px;
-      display: flex; align-items: center; justify-content: space-between; gap: 25px;
-      padding: 0 clamp(22px, 6.5vw, 100px);
-      color: var(--text); background: rgba(18, 32, 22, .08);
-      border-bottom: 1px solid rgba(255, 255, 255, .14);
-      backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
-    }
-    .brand-link { display: inline-flex; align-items: center; flex: 0 0 auto; }
-    .brand-logo { width: 78px; height: 78px; object-fit: contain; mix-blend-mode: multiply; }
-    .nav { display: flex; align-items: center; gap: clamp(20px, 3.3vw, 48px); }
-    .nav a, .top-contact {
-      text-decoration: none; font-size: 9px; font-weight: 800;
-      letter-spacing: .17em; text-transform: uppercase;
-    }
-    .nav a { color: rgba(255, 249, 238, .96); transition: color .2s; text-shadow: 0 2px 12px rgba(0,0,0,.58); }
-    .nav a:hover { color: var(--gold-light); }
-    .top-contact {
-      color: #fff8eb; border-bottom: 1px solid var(--gold-light);
-      padding: 0 0 7px; white-space: nowrap; text-shadow: 0 2px 12px rgba(0,0,0,.58);
-    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit}
+    .header{height:82px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:26px;padding:0 clamp(22px,6vw,92px);background:rgba(242,238,229,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(38,55,43,.1)}
+    .logo-link{display:flex;align-items:center;text-decoration:none}
+    .logo{width:70px;height:70px;object-fit:contain;mix-blend-mode:multiply}
+    .nav{display:flex;align-items:center;gap:clamp(20px,3.2vw,44px)}
+    .nav a,.phone{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
+    .nav a{color:#566255;transition:color .2s}
+    .nav a:hover{color:#a17a4e}
+    .phone{color:var(--forest);white-space:nowrap;border-bottom:1px solid var(--gold);padding-bottom:6px}
 
-    .hero {
-      min-height: min(900px, calc(100svh - 88px));
-      display: flex; align-items: center;
-      padding: clamp(58px, 8vw, 112px) clamp(22px, 7vw, 106px);
-    }
-    .hero-panel {
-      width: min(760px, 72vw); position: relative; padding: 0;
-      color: var(--text); background: transparent; border: 0; box-shadow: none;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
-    }
-    .kicker, .label {
-      display: flex; align-items: center; gap: 13px;
-      margin: 0; color: var(--gold-light); font-size: 9px; font-weight: 800;
-      text-shadow: 0 2px 12px rgba(0,0,0,.62);
-      letter-spacing: .24em; text-transform: uppercase;
-    }
-    .kicker:before { content: ""; width: 31px; height: 1px; background: currentColor; }
-    h1 {
-      margin: 28px 0 16px; color: #fff9ed; text-shadow: 0 4px 24px rgba(0,0,0,.48);
-      font: 500 clamp(104px, 14vw, 190px)/.72 var(--serif);
-      letter-spacing: -.075em;
-    }
-    h1 span { color: var(--gold); }
-    .hero-tagline {
-      margin: 0; color: #fff8eb; font: 500 clamp(30px, 4vw, 54px)/.98 var(--serif);
-      text-shadow: 0 3px 18px rgba(0,0,0,.62);
-      letter-spacing: -.025em;
-    }
-    .hero-tagline em { color: var(--gold-light); }
-    .hero-description {
-      max-width: 480px; margin: 25px 0 32px; color: rgba(255,250,240,.95);
-      font-size: 13px; line-height: 1.95; text-shadow: 0 2px 13px rgba(0,0,0,.72);
-    }
-    .actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
-    .btn {
-      min-height: 54px; padding: 0 25px; background: var(--forest); color: white;
-      display: inline-flex; align-items: center; justify-content: center; gap: 26px;
-      text-decoration: none; font-size: 9px; font-weight: 800;
-      letter-spacing: .16em; text-transform: uppercase;
-      transition: background .25s, transform .25s, box-shadow .25s;
-    }
-    .btn:hover { background: #38543f; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(23,43,29,.2); }
-    .underlink {
-      color: #fff8eb; font-size: 9px; font-weight: 700;
-      letter-spacing: .15em; text-transform: uppercase;
-      text-decoration: none; border-bottom: 1px solid var(--gold-light); padding-bottom: 7px;
-      text-shadow: 0 2px 12px rgba(0,0,0,.62);
-    }
-    .hero-foot {
-      position: absolute; left: clamp(22px, 7vw, 106px); bottom: 24px;
-      color: rgba(248,243,233,.78); font-size: 8px;
-      letter-spacing: .2em; text-transform: uppercase;
-      text-shadow: 0 1px 9px rgba(0,0,0,.6);
-    }
+    .hero{position:relative;min-height:calc(100svh - 82px);display:flex;align-items:center;overflow:hidden;background:#1b2a20;isolation:isolate}
+    .hero-video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 50%;filter:brightness(1.12) saturate(.92) contrast(1.03)}
+    .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(13,25,17,.68) 0%,rgba(13,25,17,.38) 43%,rgba(13,25,17,.04) 100%),linear-gradient(0deg,rgba(11,20,14,.2),transparent 48%)}
+    .hero-content{width:min(720px,78vw);margin-left:clamp(24px,10vw,150px);padding:100px 0 110px;color:#fff9ef}
+    .eyebrow{display:flex;align-items:center;gap:13px;font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#e5c99f}
+    .eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+    h1{font:500 clamp(112px,16vw,218px)/.72 var(--serif);letter-spacing:-.075em;margin:33px 0 23px;color:#fff9ef}
+    h1 span{color:#d0ad7e}
+    .hero-title-small{font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin-left:8px}
+    .hero-line{font:500 clamp(30px,4.1vw,55px)/.98 var(--serif);letter-spacing:-.02em;color:#fff8ed;margin:0 0 21px}
+    .hero-line em{color:#e1c39a}
+    .hero-copy{max-width:420px;color:rgba(255,249,239,.88);font-size:12px;line-height:1.9;margin:0 0 30px;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+    .btn{min-height:52px;padding:0 23px;display:inline-flex;align-items:center;gap:28px;background:var(--cream);color:var(--forest);font-size:9px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s}
+    .btn:hover{background:#dfc7a5;transform:translateY(-2px)}
+    .scroll-cue{position:absolute;right:clamp(24px,6vw,90px);bottom:35px;display:flex;align-items:center;gap:13px;color:#fff8ed;font-size:8px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
+    .scroll-cue:after{content:"";display:block;width:1px;height:52px;background:#d9bd94;animation:cue 1.8s ease-in-out infinite}
+    @keyframes cue{0%,100%{transform:scaleY(.5);transform-origin:top;opacity:.45}50%{transform:scaleY(1);opacity:1}}
 
-    .menu-section {
-      min-height: 710px; display: flex; align-items: center; justify-content: flex-end;
-      padding: clamp(76px, 10vw, 138px) clamp(22px, 7vw, 106px);
-      position: relative;
-    }
-    .menu-panel {
-      width: min(780px, 76vw); padding: 0;
-      color: var(--text); background: transparent; border: 0; box-shadow: none;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
-      text-shadow: 0 2px 16px rgba(0,0,0,.62);
-    }
-    .menu-panel .label { color: var(--gold-light); }
-    .menu-panel h2 {
-      margin: 17px 0 15px; color: var(--text);
-      font: 500 clamp(54px, 7vw, 90px)/.82 var(--serif);
-      letter-spacing: -.05em;
-    }
-    .menu-panel h2 em { color: var(--gold-light); }
-    .section-copy { max-width: 470px; margin: 0 0 28px; color: rgba(255,249,238,.94); font-size: 13px; line-height: 1.9; }
-    .menu-list { border-top: 1px solid rgba(248,243,233,.25); margin: 12px 0 26px; }
-    .menu-row {
-      padding: 17px 0; border-bottom: 1px solid rgba(248,243,233,.22);
-      display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
-    }
-    .menu-row strong { color: #fff9ef; font: 500 clamp(22px, 2.4vw, 29px)/1.1 var(--serif); }
-    .menu-row span { color: var(--gold-light); font-size: 8px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
-    .menu-footnote { color: rgba(248,243,233,.64); font-size: 10px; line-height: 1.7; }
+    .shawarma{position:relative;min-height:min(850px,100svh);display:flex;align-items:center;overflow:hidden;isolation:isolate;background:#3a2a1d}
+    .shawarma-image{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 54%;transform:scale(1.025);transition:transform 7s ease}
+    .shawarma.is-visible .shawarma-image{transform:scale(1)}
+    .shawarma:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(22,23,16,.78) 0%,rgba(22,23,16,.48) 42%,rgba(22,23,16,.04) 78%),linear-gradient(180deg,rgba(23,26,18,.12),rgba(23,26,18,.12))}
+    .shawarma-content{width:min(610px,78vw);margin-left:clamp(24px,10vw,150px);padding:110px 0;color:#fff9ef}
+    .shawarma .eyebrow{color:#e4c598}
+    .shawarma h2{font:500 clamp(74px,10vw,138px)/.78 var(--serif);letter-spacing:-.06em;margin:30px 0 18px;color:#fff9ef}
+    .shawarma-tagline{font:500 clamp(27px,3.6vw,46px)/1.05 var(--serif);margin:0 0 20px;color:#edcfaa}
+    .shawarma-copy{max-width:390px;font-size:12px;line-height:1.9;color:rgba(255,249,239,.9);margin:0 0 30px}
+    .shawarma .btn{background:#d4b386;color:#2a2a1f}
+    .shawarma .btn:hover{background:#f1dfc4}
 
-    .contact-section {
-      min-height: 650px; padding: clamp(76px, 10vw, 130px) clamp(22px, 7vw, 106px);
-      display: grid; grid-template-columns: 1fr .82fr; align-items: center;
-      gap: clamp(28px, 7vw, 100px);
-    }
-    .contact-copy {
-      padding: 0; color: var(--text); background: transparent; border: 0; box-shadow: none;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
-      text-shadow: 0 2px 16px rgba(0,0,0,.68);
-    }
-    .contact-copy .label { color: var(--gold-light); }
-    .contact-copy h2 {
-      margin: 18px 0 20px; color: #fff8eb; text-shadow: 0 4px 22px rgba(0,0,0,.6);
-      font: 500 clamp(58px, 7.3vw, 98px)/.82 var(--serif);
-      letter-spacing: -.055em;
-    }
-    .contact-copy h2 em { color: #9a754c; }
-    .contact-copy p:not(.label) { max-width: 390px; color: rgba(255,249,238,.95); font-size: 13px; line-height: 1.9; margin: 0 0 28px; }
-    .contact-details {
-      padding: 0; color: var(--text); background: transparent; border: 0; box-shadow: none;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
-      text-shadow: 0 2px 16px rgba(0,0,0,.68);
-    }
-    .contact-details small {
-      color: var(--gold-light); font-size: 8px; font-weight: 800;
-      letter-spacing: .2em; text-transform: uppercase;
-    }
-    .contact-details h3 {
-      margin: 10px 0 27px; color: var(--text);
-      font: 500 clamp(24px, 2.5vw, 31px)/1.17 var(--serif);
-    }
-    .contact-details h3:last-child { margin-bottom: 0; }
-    .contact-details a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(212,177,132,.7); }
-    .contact-details a:hover { color: var(--gold-light); }
+    .contacts{background:var(--paper);padding:clamp(70px,9vw,120px) clamp(24px,10vw,150px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,9vw,130px);align-items:start}
+    .contacts-heading .eyebrow{color:#a17b51}
+    .contacts h2{font:500 clamp(64px,8vw,104px)/.82 var(--serif);letter-spacing:-.055em;color:var(--forest);margin:22px 0 25px}
+    .contacts-intro{max-width:390px;color:var(--muted);font-size:12px;line-height:1.9;margin:0}
+    .contacts-info{display:grid;grid-template-columns:1fr 1fr;gap:32px 28px;padding-top:12px}
+    .info-item{border-top:1px solid #d9d3c7;padding-top:15px}
+    .info-item small{font-size:8px;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:#9a774e}
+    .info-item p,.info-item a{display:block;margin:10px 0 0;color:var(--ink);font:500 23px/1.18 var(--serif);text-decoration:none}
+    .info-item a:hover{color:#9a774e}
+    .route-link{display:inline-flex;align-items:center;gap:12px;margin-top:28px;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:8px;font-size:9px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(24px,6vw,92px);background:#1d3024;color:#f8f3e9}
+    .footer-logo{width:58px;height:58px;object-fit:contain;background:var(--cream)}
+    .footer span,.footer small,.footer a{font-size:9px;color:rgba(248,243,233,.86)}
+    .footer a{text-decoration:none;letter-spacing:.15em;text-transform:uppercase}
 
-    .footer {
-      min-height: 105px; display: flex; align-items: center; justify-content: space-between;
-      gap: 20px; padding: 19px clamp(22px, 7vw, 106px);
-      background: transparent; border-top: 0;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:760px){
+      .header{height:72px;padding:0 5%;gap:14px}
+      .logo{width:60px;height:60px}
+      .nav{gap:16px}
+      .nav a{font-size:8px;letter-spacing:.1em}
+      .phone{display:none}
+      .hero{min-height:calc(100svh - 72px)}
+      .hero-content{width:88vw;margin-left:7%;padding:86px 0 92px}
+      h1{font-size:clamp(104px,27vw,155px);margin:29px 0 21px}
+      .hero-title-small{font-size:10px;letter-spacing:.25em}
+      .hero-line{font-size:33px}
+      .hero-copy{font-size:11px;max-width:340px}
+      .hero-shade{background:linear-gradient(90deg,rgba(13,25,17,.65),rgba(13,25,17,.2)),linear-gradient(0deg,rgba(11,20,14,.28),transparent 60%)}
+      .scroll-cue{right:17px;bottom:22px;font-size:7px}
+      .shawarma{min-height:760px;align-items:flex-end}
+      .shawarma-image{object-position:62% center}
+      .shawarma:before{background:linear-gradient(0deg,rgba(19,23,16,.8),rgba(19,23,16,.24) 62%,rgba(19,23,16,.05))}
+      .shawarma-content{width:88%;margin:0 6%;padding:80px 0 65px}
+      .shawarma h2{font-size:83px;margin:24px 0 15px}
+      .shawarma-tagline{font-size:30px}
+      .contacts{grid-template-columns:1fr;padding:70px 7%;gap:38px}
+      .contacts h2{font-size:74px}
+      .contacts-info{gap:25px 18px}
+      .info-item p,.info-item a{font-size:21px}
+      .footer{flex-wrap:wrap;padding:17px 6%;gap:12px}
+      .footer-logo{width:50px;height:50px}
+      .footer span{flex:1;min-width:165px}
+      .footer small{width:100%}
     }
-    .footer img { width: 65px; height: 65px; object-fit: contain; background: var(--cream); }
-    .footer span, .footer small, .footer a { color: rgba(255,249,238,.96); font-size: 9px; text-shadow: 0 2px 12px rgba(0,0,0,.72); }
-    .footer a { text-decoration: none; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-    .footer a:hover { color: var(--gold-light); }
-
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
-    .reveal.visible { opacity: 1; transform: none; }
-    @media (max-width: 900px) {
-      .topbar { padding: 0 5%; }
-      .hero { padding-left: 5%; padding-right: 5%; }
-      .hero-panel { width: min(760px, 86vw); }
-      .menu-section { padding-left: 5%; padding-right: 5%; }
-      .menu-panel { width: min(760px, 90vw); }
-      .contact-section { padding-left: 5%; padding-right: 5%; gap: 28px; }
-    }
-    @media (max-width: 650px) {
-      html { scroll-padding-top: 72px; }
-      .topbar { height: 72px; padding: 0 5%; gap: 12px; }
-      .brand-logo { width: 62px; height: 62px; }
-      .nav { gap: 17px; }
-      .nav a { font-size: 8px; letter-spacing: .1em; }
-      .top-contact { display: none; }
-      .hero { min-height: 690px; padding: 54px 5% 68px; }
-      .hero-panel { width: 100%; padding: 0; }
-      h1 { font-size: clamp(100px, 28vw, 142px); margin: 27px 0 15px; }
-      .hero-tagline { font-size: 34px; }
-      .hero-description { font-size: 11px; margin: 21px 0 26px; }
-      .hero-foot { left: 5%; bottom: 22px; font-size: 7px; }
-      .menu-section { min-height: 0; padding: 70px 5%; }
-      .menu-panel { width: 100%; padding: 0; }
-      .menu-panel h2 { font-size: 60px; }
-      .menu-row { gap: 12px; padding: 16px 0; }
-      .menu-row strong { font-size: 21px; }
-      .menu-row span { font-size: 7px; }
-      .contact-section { min-height: 0; grid-template-columns: 1fr; gap: 18px; padding: 70px 5%; }
-      .contact-copy, .contact-details { padding: 0; }
-      .contact-copy h2 { font-size: 71px; }
-      .contact-details h3 { font-size: 26px; }
-      .footer { flex-wrap: wrap; padding: 18px 5%; gap: 12px; }
-      .footer img { width: 54px; height: 54px; }
-      .footer span { flex: 1; min-width: 180px; }
-      .footer small { width: 100%; }
-      .site-video { object-position: center 48%; filter: saturate(.94) contrast(1.02) brightness(1.08); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *:before, *:after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
-      .site-video { display: none; }
-      .site-video-wash { background: radial-gradient(ellipse at center, #384638, #142219); }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+      .scroll-cue{display:none}
+      .shawarma-image{transform:none}
     }
   </style>
 </head>
 <body>
-  <video class="site-video" id="site-video" autoplay muted loop playsinline webkit-playsinline preload="auto"
-    poster="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-coffee-poster-brighter.jpg"
-    aria-hidden="true">
-    <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-coffee-brighter.mp4" type="video/mp4">
-  </video>
-  <div class="site-video-wash" aria-hidden="true"></div>
-
-  <header class="topbar">
-    <a class="brand-link" href="#top" aria-label="Гастрокофе ГОРЫ — главная">
-      <img class="brand-logo" src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Оригинальный логотип Гастрокофе ГОРЫ">
+  <header class="header">
+    <a class="logo-link" href="#top" aria-label="Гастрокофе ГОРЫ — главная">
+      <img class="logo" src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Оригинальный логотип Гастрокофе ГОРЫ">
     </a>
-    <nav class="nav" aria-label="Главная навигация">
+    <nav class="nav" aria-label="Навигация">
+      <a href="#top">О нас</a>
       <a href="#menu">Меню</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a class="top-contact" href="tel:+79803842800">+7 (980) 384-28-00</a>
+    <a class="phone" href="tel:+79803842800">+7 (980) 384-28-00</a>
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="Гастрокофе ГОРЫ">
-      <div class="hero-panel">
-        <p class="kicker">Гастрокофе · Белгород</p>
+    <section class="hero" aria-label="Кофе в гастрокофе ГОРЫ">
+      <video class="hero-video" id="coffee-video" autoplay muted loop playsinline webkit-playsinline preload="auto"
+        poster="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-coffee-poster-brighter.jpg" aria-hidden="true">
+        <source src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-coffee-brighter.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Гастрокофе · Белгород</p>
         <h1>ГОРЫ<span>.</span></h1>
-        <p class="hero-tagline">Выше суеты.<br><em>Ближе к вкусу.</em></p>
-        <p class="hero-description">Премиальный зерновой кофе, сочная шаурма, кебаб в лаваше, сэндвичи и десерты. Место, где можно выдохнуть и выбрать что-то по-настоящему вкусное.</p>
-        <div class="actions">
-          <a class="btn" href="#menu">Смотреть меню <span>↗</span></a>
-          <a class="underlink" href="#contacts">Как нас найти</a>
-        </div>
+        <div class="hero-title-small">Г А С Т Р О К О Ф Е</div>
+        <p class="hero-line">Выше суеты.<br><em>Ближе к вкусу.</em></p>
+        <p class="hero-copy">Кофе, который задаёт настроение. Вкус, ради которого хочется задержаться.</p>
+        <a class="btn" href="#menu">Перейти к меню <span>↘</span></a>
       </div>
-      <div class="hero-foot">Кофе · Еда · Впечатления</div>
+      <div class="scroll-cue">Дальше — вкуснее</div>
     </section>
 
-    <section class="menu-section" id="menu">
-      <div class="menu-panel reveal">
-        <p class="label">Кофе · кухня · десерты</p>
-        <h2>Есть повод<br><em>зайти.</em></h2>
-        <p class="section-copy">От чашки зернового кофе до сытного обеда — выбирайте то, что подходит именно сегодня.</p>
-        <div class="menu-list">
-          <div class="menu-row"><strong>Шаурма и кебаб</strong><span>Сытно и сочно</span></div>
-          <div class="menu-row"><strong>Кофе и напитки</strong><span>Классика и любимое</span></div>
-          <div class="menu-row"><strong>Сэндвичи и завтраки</strong><span>На каждый день</span></div>
-          <div class="menu-row"><strong>Десерты</strong><span>К кофе</span></div>
-        </div>
-        <p class="menu-footnote">Актуальное наличие и состав блюд уточняйте у команды гастрокофе.</p>
+    <section class="shawarma" id="menu" aria-label="Шаурма и кухня ГОРЫ">
+      <img class="shawarma-image" src="https://headless-mbrecowljbm-aleksanyan24011994-1412.wix-site-host.com/gory-shawarma-hero.jpg" alt="Шаурма с мясом, овощами и соусом" loading="lazy">
+      <div class="shawarma-content reveal">
+        <p class="eyebrow">Когда хочется основательно</p>
+        <h2>Шаурма.</h2>
+        <p class="shawarma-tagline">Сочно. Быстро. Вкусно.</p>
+        <p class="shawarma-copy">Горячая лепёшка, сочная начинка и тот самый момент, когда первый кусочек — уже удовольствие.</p>
+        <a class="btn" href="#contacts">Заглянуть к нам <span>↘</span></a>
       </div>
     </section>
 
-    <section class="contact-section" id="contacts">
-      <div class="contact-copy reveal">
-        <p class="label">Будем рады видеть</p>
-        <h2>До встречи<br>в <em>ГОРАХ.</em></h2>
-        <p>Заглядывайте за любимым кофе, обедом или хорошим настроением.</p>
-        <a class="btn" href="https://yandex.ru/maps/org/gory/133866911303/?ll=36.602979%2C50.592956&z=17" target="_blank" rel="noopener noreferrer">Построить маршрут <span>↗</span></a>
+    <section class="contacts" id="contacts">
+      <div class="contacts-heading reveal">
+        <p class="eyebrow">Будем рады встрече</p>
+        <h2>До встречи<br>в ГОРАХ.</h2>
+        <p class="contacts-intro">Заглядывайте за кофе, любимой шаурмой или просто за хорошим настроением.</p>
+        <a class="route-link" href="https://yandex.ru/maps/org/gory/133866911303/?ll=36.602979%2C50.592956&z=17" target="_blank" rel="noopener noreferrer">Построить маршрут <span>↗</span></a>
       </div>
-      <div class="contact-details reveal">
-        <small>Наш адрес</small>
-        <h3>Белгород,<br>Гражданский пр-т, 5</h3>
-        <small>Телефон</small>
-        <h3><a href="tel:+79803842800">+7 (980) 384-28-00</a></h3>
-        <small>Instagram</small>
-        <h3><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noopener noreferrer">@go_gory_bgd ↗</a></h3>
+      <div class="contacts-info reveal">
+        <div class="info-item"><small>Адрес</small><p>Белгород,<br>Гражданский пр-т, 5</p></div>
+        <div class="info-item"><small>Телефон</small><a href="tel:+79803842800">+7 (980) 384-28-00</a></div>
+        <div class="info-item"><small>Социальные сети</small><a href="https://www.instagram.com/go_gory_bgd/" target="_blank" rel="noopener noreferrer">@go_gory_bgd ↗</a></div>
+        <div class="info-item"><small>Меню</small><a href="#menu">Кофе и кухня ↗</a></div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <img src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Логотип Гастрокофе ГОРЫ">
+    <img class="footer-logo" src="https://static.wixstatic.com/media/71a052_aaf8605ec53a4863ba92f9fe4331fa8c~mv2.jpg" alt="Логотип Гастрокофе ГОРЫ">
     <span>Выше суеты. Ближе к вкусу.</span>
     <a href="#top">Наверх ↑</a>
     <small>© Гастрокофе «ГОРЫ» · 2026</small>
@@ -324,31 +186,27 @@
     (() => {
       const revealItems = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver(entries => {
+        const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
-              revealObserver.unobserve(entry.target);
+              if (entry.target.classList.contains('shawarma-content')) {
+                document.querySelector('.shawarma')?.classList.add('is-visible');
+              }
+              observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.12 });
-        revealItems.forEach(item => revealObserver.observe(item));
+        }, { threshold: .15 });
+        revealItems.forEach(el => observer.observe(el));
       } else {
-        revealItems.forEach(item => item.classList.add('visible'));
+        revealItems.forEach(el => el.classList.add('visible'));
       }
-
-      const video = document.getElementById('site-video');
+      const video = document.getElementById('coffee-video');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (video && !reduceMotion) {
-        const playVideo = () => {
-          const result = video.play();
-          if (result && result.catch) result.catch(() => {});
-        };
-        if (document.visibilityState === 'visible') playVideo();
-        document.addEventListener('visibilitychange', () => {
-          if (document.hidden) video.pause();
-          else playVideo();
-        });
+        const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+        play();
+        document.addEventListener('visibilitychange', () => document.hidden ? video.pause() : play());
       } else if (video) {
         video.pause();
       }
